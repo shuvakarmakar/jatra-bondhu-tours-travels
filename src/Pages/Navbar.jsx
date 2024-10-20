@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaBox, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa'; // Package icon, phone, location icon
+import { FaBox, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../../public/Jatra Bondhu Travel.png';
 
 const Navbar = () => {
