@@ -11,6 +11,13 @@ const Navbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    const handleScrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <nav className="bg-gradient-to-r from-blue-800 to-blue-600 text-white shadow-lg">
             <div className="container mx-auto flex justify-between items-center px-4 py-3">
@@ -26,7 +33,7 @@ const Navbar = () => {
                 {/* Desktop Menu Items */}
                 <ul className="hidden md:flex space-x-8">
                     <li><a href="#" id="nav-home" className="hover:text-yellow-300 transition">Home</a></li>
-                    <li><a href="#" id="nav-our-service" className="hover:text-yellow-300 transition">Our Service</a></li>
+                    <li><a onClick={() => handleScrollToSection("services")} href="#" id="nav-our-service" className="hover:text-yellow-300 transition">Our Service</a></li>
                     <li className="flex items-center space-x-2">
                         <FaBox />
                         <a href="#" id="nav-tour-package" className="hover:text-yellow-300 transition">Tour Package</a>
@@ -76,14 +83,50 @@ const Navbar = () => {
                 <div className="md:hidden bg-blue-900">
                     <ul className="flex flex-col space-y-4 p-4">
                         <li><a href="#" id="nav-home" className="hover:text-yellow-300">Home</a></li>
-                        <li><a href="#" id="nav-our-service" className="hover:text-yellow-300">Our Service</a></li>
+                        <li>
+                            <a
+                                onClick={() => { handleScrollToSection("services"); setIsMobileMenuOpen(false); }}
+                                href="#"
+                                id="nav-our-service"
+                                className="hover:text-yellow-300"
+                            >
+                                Our Service
+                            </a>
+                        </li>
                         <li className="flex items-center space-x-2">
                             <FaBox />
                             <a href="#" id="nav-tour-package" className="hover:text-yellow-300">Tour Package</a>
                         </li>
-                        <li><a href="#" id="nav-visa-info" className="hover:text-yellow-300">Visa Info</a></li>
-                        <li><a href="#" id="nav-query" className="hover:text-yellow-300">Query</a></li>
-                        <li><a href="#" id="nav-contact" className="hover:text-yellow-300">Contact</a></li>
+                        <li>
+                            <a
+                                onClick={() => { handleScrollToSection("visa-info"); setIsMobileMenuOpen(false); }}
+                                href="#"
+                                id="nav-visa-info"
+                                className="hover:text-yellow-300"
+                            >
+                                Visa Info
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                onClick={() => { handleScrollToSection("query"); setIsMobileMenuOpen(false); }}
+                                href="#"
+                                id="nav-query"
+                                className="hover:text-yellow-300"
+                            >
+                                Query
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                onClick={() => { handleScrollToSection("contact"); setIsMobileMenuOpen(false); }}
+                                href="#"
+                                id="nav-contact"
+                                className="hover:text-yellow-300"
+                            >
+                                Contact
+                            </a>
+                        </li>
                         <li className="flex flex-col items-start">
                             <span id="contact-number" className="flex items-center space-x-1 text-sm">
                                 <FaPhoneAlt /> <span>+8801317290009</span>
