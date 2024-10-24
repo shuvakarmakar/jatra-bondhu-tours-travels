@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import ContactUs from "./ContactUs";
 import Navbar from "./NavBar";
 import Service from "./Service";
 
@@ -8,6 +9,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <Service></Service>
+            <ContactUs></ContactUs>
         </div>
     );
 };
