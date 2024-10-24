@@ -1,5 +1,4 @@
-import { FaPlane, FaHotel, FaMapMarkedAlt, FaPassport } from 'react-icons/fa';
-import heroImage from '../../public/image.jpg'; // Replace with actual hero image path
+import heroImage from '../../public/image.jpg'; 
 
 const Banner = () => {
     return (
