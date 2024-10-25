@@ -25,7 +25,7 @@ const Banner = () => {
                             2000, // Pause for 2 seconds
                             'Travel Beyond Boundaries', // Third sentence
                             2000, // Pause for 2 seconds
-                            'Best Travel Agency In Bangladesh', // Third sentence
+                            'Best Travel Agency In Bangladesh', // Fourth sentence
                             2000, // Pause for 2 seconds
                         ]}
                         wrapper="p"
