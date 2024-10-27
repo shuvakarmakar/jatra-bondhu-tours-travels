@@ -1,7 +1,7 @@
-const ContactUs = () => {
+const Contact = () => {
     return (
         <div>
-            <section id="cta" className="py-16 bg-blue-800 text-white">
+            <section className="py-16 bg-blue-800 text-white">
                 <div className="container mx-auto text-center">
                     <h2 className="text-4xl font-bold mb-4">Ready to Embark on Your Next Journey?</h2>
                     <p className="text-lg mb-8">Book with Jatra Bondhu today and travel without worries!</p>
@@ -14,4 +14,4 @@ const ContactUs = () => {
     );
 };
 
-export default ContactUs;
+export default Contact;

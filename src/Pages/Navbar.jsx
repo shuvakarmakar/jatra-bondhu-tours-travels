@@ -40,7 +40,7 @@ const Navbar = () => {
                     </li>
                     <li><a href="#" id="nav-visa-info" className="hover:text-yellow-300 transition">Visa Info</a></li>
                     <li><a href="#" id="nav-query" className="hover:text-yellow-300 transition">Query</a></li>
-                    <li><a href="#" id="nav-contact" className="hover:text-yellow-300 transition">Contact</a></li>
+                    <li><a onClick={() => handleScrollToSection("contact-form")} href="#" className="hover:text-yellow-300 transition">Contact</a></li>
                 </ul>
 
                 {/* Contact Info */}
@@ -86,8 +86,6 @@ const Navbar = () => {
                         <li>
                             <a
                                 onClick={() => { handleScrollToSection("services"); setIsMobileMenuOpen(false); }}
-                                href="#"
-                                id="nav-our-service"
                                 className="hover:text-yellow-300"
                             >
                                 Our Service
@@ -100,8 +98,6 @@ const Navbar = () => {
                         <li>
                             <a
                                 onClick={() => { handleScrollToSection("visa-info"); setIsMobileMenuOpen(false); }}
-                                href="#"
-                                id="nav-visa-info"
                                 className="hover:text-yellow-300"
                             >
                                 Visa Info
@@ -110,8 +106,6 @@ const Navbar = () => {
                         <li>
                             <a
                                 onClick={() => { handleScrollToSection("query"); setIsMobileMenuOpen(false); }}
-                                href="#"
-                                id="nav-query"
                                 className="hover:text-yellow-300"
                             >
                                 Query
@@ -119,14 +113,13 @@ const Navbar = () => {
                         </li>
                         <li>
                             <a
-                                onClick={() => { handleScrollToSection("contact"); setIsMobileMenuOpen(false); }}
-                                href="#"
-                                id="nav-contact"
+                                onClick={() => { handleScrollToSection("contact-form"); setIsMobileMenuOpen(false); }}
                                 className="hover:text-yellow-300"
                             >
                                 Contact
                             </a>
                         </li>
+
                         <li className="flex flex-col items-start">
                             <span id="contact-number" className="flex items-center space-x-1 text-sm">
                                 <FaPhoneAlt /> <span>+8801317290009</span>
