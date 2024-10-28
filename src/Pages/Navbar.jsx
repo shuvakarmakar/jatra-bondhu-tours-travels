@@ -33,7 +33,7 @@ const Navbar = () => {
                 {/* Desktop Menu Items */}
                 <ul className="hidden md:flex space-x-8">
                     <li><a href="#" id="nav-home" className="hover:text-yellow-300 transition">Home</a></li>
-                    <li><a onClick={() => handleScrollToSection("services")} href="#" id="nav-our-service" className="hover:text-yellow-300 transition">Our Service</a></li>
+                    <li><a onClick={() => handleScrollToSection("services")} href="#" className="hover:text-yellow-300 transition">Our Service</a></li>
                     <li className="flex items-center space-x-2">
                         <FaBox />
                         <a href="#" id="nav-tour-package" className="hover:text-yellow-300 transition">Tour Package</a>

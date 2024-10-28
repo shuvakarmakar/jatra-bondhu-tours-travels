@@ -3,6 +3,7 @@ import ContactForm from "./ContactForm";
 import Contact from "./Contact";
 import Navbar from "./NavBar";
 import Service from "./Service";
+import Footer from "./Footer";
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Service></Service>
             <Contact></Contact>
             <ContactForm></ContactForm>
+            <Footer></Footer>
         </div>
     );
 };
