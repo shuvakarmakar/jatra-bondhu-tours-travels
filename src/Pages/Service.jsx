@@ -1,14 +1,29 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaPlaneDeparture, FaHotel, FaMapMarkedAlt, FaTrain, FaPassport, FaHeart } from 'react-icons/fa';
 
 const Services = () => {
+    useEffect(() => {
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    }, []);
+
     return (
         <section id="services" className="bg-gradient-to-r from-yellow-50 to-blue-50 py-16 px-8">
             <div className="container mx-auto text-center">
-                <h2 className="text-4xl font-bold mb-12 text-blue-900">Our Exclusive Services</h2>
+                <h2
+                    className="text-4xl font-bold mb-12 text-blue-900"
+                    data-aos="fade-up"
+                >
+                    Our Exclusive Services
+                </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Flight Booking */}
-                    <div className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105">
+                    <div
+                        className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105"
+                        data-aos="zoom-in"
+                    >
                         <div className="flex items-center justify-center mb-4 text-blue-600 text-5xl">
                             <FaPlaneDeparture />
                         </div>
@@ -19,7 +34,10 @@ const Services = () => {
                     </div>
 
                     {/* Hotel Reservations */}
-                    <div className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105">
+                    <div
+                        className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105"
+                        data-aos="zoom-in"
+                    >
                         <div className="flex items-center justify-center mb-4 text-blue-600 text-5xl">
                             <FaHotel />
                         </div>
@@ -30,7 +48,10 @@ const Services = () => {
                     </div>
 
                     {/* Custom Tour Packages */}
-                    <div className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105">
+                    <div
+                        className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105"
+                        data-aos="zoom-in"
+                    >
                         <div className="flex items-center justify-center mb-4 text-blue-600 text-5xl">
                             <FaMapMarkedAlt />
                         </div>
@@ -41,7 +62,10 @@ const Services = () => {
                     </div>
 
                     {/* Indian Railway Tickets */}
-                    <div className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105">
+                    <div
+                        className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105"
+                        data-aos="zoom-in"
+                    >
                         <div className="flex items-center justify-center mb-4 text-blue-600 text-5xl">
                             <FaTrain />
                         </div>
@@ -52,7 +76,10 @@ const Services = () => {
                     </div>
 
                     {/* Visa Assistance */}
-                    <div className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105">
+                    <div
+                        className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105"
+                        data-aos="zoom-in"
+                    >
                         <div className="flex items-center justify-center mb-4 text-blue-600 text-5xl">
                             <FaPassport />
                         </div>
@@ -61,8 +88,12 @@ const Services = () => {
                             We offer fast and reliable visa processing to ensure a smooth travel experience.
                         </p>
                     </div>
+
                     {/* Honeymoon Packages */}
-                    <div className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105">
+                    <div
+                        className="card bg-white shadow-lg rounded-lg p-6 transition transform hover:scale-105"
+                        data-aos="zoom-in"
+                    >
                         <div className="flex items-center justify-center mb-4 text-blue-600 text-5xl">
                             <FaHeart />
                         </div>
@@ -74,7 +105,6 @@ const Services = () => {
                 </div>
             </div>
         </section>
-
     );
 };
 
