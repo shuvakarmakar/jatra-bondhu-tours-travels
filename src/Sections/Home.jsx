@@ -5,6 +5,7 @@ import Navbar from "./NavBar";
 import Service from "./Service";
 import Footer from "./Footer";
 import TeamIntroduction from "./TeamIntroduction";
+import LiveChat from "./LiveChat";
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <TeamIntroduction></TeamIntroduction>
             <Contact></Contact>
             <ContactForm></ContactForm>
+            <LiveChat></LiveChat>
             <Footer></Footer>
         </div>
     );
