@@ -6,12 +6,12 @@ const teamMembers = [
     {
         name: 'Shuva Karmakar',
         role: 'Founder & CEO',
-        image: '/public/TeamMembers/Shuva Karmakar.jpg',
+        image: 'src/assets/TeamMembers/Shuva Karmakar.jpg',
     },
     {
         name: 'Misty Roy',
         role: 'Travel Consultant & Marketing Manager',
-        image: '/public/TeamMembers/Misty.jpg',
+        image: 'src/assets/TeamMembers/Misty.jpg',
     },
 ];
 

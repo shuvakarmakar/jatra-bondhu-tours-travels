@@ -1,4 +1,4 @@
-import heroImage from '../../public/image.jpg';
+import heroImage from '../assets/image.jpg';
 import { TypeAnimation } from 'react-type-animation';
 
 const Banner = () => {

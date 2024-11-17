@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaBox, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
-import logo from '../../public/Jatra Bondhu Travel.png';
+import logo from '../assets/Jatra Bondhu Travel.png';
 
 const Navbar = () => {
     // State to handle mobile menu visibility
