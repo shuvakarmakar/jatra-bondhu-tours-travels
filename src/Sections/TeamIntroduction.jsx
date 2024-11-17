@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import member1 from '../assets/Team/Shuva Karmakar.jpg'
+import member2 from '../assets/Team/Misty.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -6,12 +8,12 @@ const teamMembers = [
     {
         name: 'Shuva Karmakar',
         role: 'Founder & CEO',
-        image: 'src/assets/TeamMembers/Shuva Karmakar.jpg',
+        image: member1,
     },
     {
         name: 'Misty Roy',
         role: 'Travel Consultant & Marketing Manager',
-        image: 'src/assets/TeamMembers/Misty.jpg',
+        image: member2,
     },
 ];
 
