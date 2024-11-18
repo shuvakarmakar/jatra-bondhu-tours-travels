@@ -6,10 +6,12 @@ import Service from "./Service";
 import Footer from "./Footer";
 import TeamIntroduction from "./TeamIntroduction";
 import LiveChat from "./LiveChat";
+import Loader from "./Loader";
 
 const Home = () => {
     return (
         <div>
+            <Loader></Loader>
             <Navbar></Navbar>
             <Banner></Banner>
             <Service></Service>
