@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import TeamIntroduction from "./TeamIntroduction";
 import LiveChat from "./LiveChat";
 import Loader from "./Loader";
+import WhatsAppChat from "./WhatsappChat";
 
 const Home = () => {
     return (
@@ -18,7 +19,8 @@ const Home = () => {
             <TeamIntroduction></TeamIntroduction>
             <Contact></Contact>
             <ContactForm></ContactForm>
-            <LiveChat></LiveChat>
+            {/* <LiveChat></LiveChat> */}
+            <WhatsAppChat></WhatsAppChat>
             <Footer></Footer>
         </div>
     );
