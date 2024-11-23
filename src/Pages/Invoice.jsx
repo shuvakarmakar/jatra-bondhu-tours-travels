@@ -87,23 +87,23 @@ const Invoice = () => {
             body: tableData,
             theme: "grid", // Adds gridlines for a cleaner look
             headStyles: {
-                fillColor: [30, 144, 255], // Modern blue header
+                fillColor: [30, 144, 255], 
                 fontStyle: 'bold',
-                textColor: [255, 255, 255], // White text for header
+                textColor: [255, 255, 255], 
                 halign: 'center', // Center-align header text
                 valign: 'middle',
             },
             bodyStyles: {
                 fontSize: 10,
-                textColor: [0, 0, 0], // Black text for the body
-                halign: 'center', // Center-align body text
+                textColor: [0, 0, 0], 
+                halign: 'center', 
             },
             alternateRowStyles: {
-                fillColor: [240, 248, 255], // Light blue for alternating rows
+                fillColor: [240, 248, 255], 
             },
             styles: {
                 fontSize: 10,
-                cellPadding: 4, // Adjust padding for better spacing
+                cellPadding: 4, 
             },
 
         });
@@ -134,7 +134,7 @@ const Invoice = () => {
     return (
         <div className="p-4 sm:p-8 bg-gray-100 min-h-screen">
             <div className="max-w-5xl mx-auto bg-white p-6 sm:p-10 shadow-lg rounded-md">
-                <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">Invoice</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">Invoice for Selling Ticket</h1>
 
                 {/* Invoice Number */}
                 <div className="mb-4">
