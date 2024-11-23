@@ -59,10 +59,10 @@ const Invoice = () => {
         // Company Header
         doc.addImage(logo, "PNG", 20, 20, 20, 20);
         doc.setFontSize(14);
-        doc.text("JATRA BONDHU TOURS & TRAVELS", 60, 20);
+        doc.text("JATRA BONDHU TOURS & TRAVELS", 45, 20);
         doc.setFontSize(12);
-        doc.text("37 New Chashara, Narayanganj", 60, 30);
-        doc.text("Phone: +8801317-290009 | Facebook: facebook.com/JatraBondhu", 60, 40);
+        doc.text("37 New Chashara, Narayanganj", 45, 30);
+        doc.text("Phone: +8801317-290009 | Facebook: facebook.com/JatraBondhu", 45, 40);
 
         // Client Information
         doc.setFontSize(11);
@@ -127,7 +127,8 @@ const Invoice = () => {
         doc.text("Authorized Signature", 150, finalY + 60);
 
         // Save PDF
-        doc.save(`Invoice_${invoiceData.invoiceNumber}.pdf`);
+        doc.save(`${invoiceData.clientName}_${invoiceData.invoiceNumber}.pdf`);
+
     };
 
     return (
