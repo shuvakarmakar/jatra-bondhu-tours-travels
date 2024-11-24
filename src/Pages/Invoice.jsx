@@ -61,7 +61,7 @@ const Invoice = () => {
         const doc = new jsPDF();
 
         // Company Header
-        doc.addImage(logo, "PNG", 20, 20, 25, 25); // Slightly larger logo for better visibility
+        doc.addImage(logo, "PNG", 20, 20, 25, 25);
 
         // Company Name
         doc.setFontSize(18);
@@ -69,19 +69,19 @@ const Invoice = () => {
         doc.text("JATRA BONDHU", 50, 25);
 
         // Invoice Text (Right Portion)
-        doc.setFontSize(22); // Larger font for "Invoice"
+        doc.setFontSize(22);
         doc.setFont("helvetica", "bold");
-        doc.setTextColor(0, 0, 0); // Black color for the "Invoice" text
-        const invoiceText = "INVOICE"; // The text to be added on the right side
-        const invoiceTextWidth = doc.getTextWidth(invoiceText); // Get the width of the "Invoice" text
-        const rightPosition = doc.internal.pageSize.width - invoiceTextWidth - 30; 
-        doc.text(invoiceText, rightPosition, 25); // Position the "Invoice" text on the right, aligned with the company name
+        doc.setTextColor(0, 0, 0);
+        const invoiceText = "INVOICE";
+        const invoiceTextWidth = doc.getTextWidth(invoiceText);
+        const rightPosition = doc.internal.pageSize.width - invoiceTextWidth - 30;
+        doc.text(invoiceText, rightPosition, 25);
 
         // Tagline
         doc.setFontSize(12);
         doc.setFont("helvetica", "italic");
-        doc.setTextColor(50, 50, 50); // Gray color for the tagline
-        doc.text("Tours & Travels", 50, 33); // Positioned slightly below the company name
+        doc.setTextColor(50, 50, 50);
+        doc.text("Tours & Travels", 50, 33);
 
 
 
