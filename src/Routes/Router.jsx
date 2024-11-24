@@ -12,11 +12,11 @@ export const router = createBrowserRouter([
         element: <Home></Home>,
     },
     {
-        path: "terms-and-conditions",
+        path: "/terms-and-conditions",
         element: <TermsandConditions></TermsandConditions>
     },
     {
-        path: "invoice",
+        path: "/invoice",
         element: <Invoice></Invoice>
     }
 ]);

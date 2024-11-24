@@ -3,6 +3,10 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import logo from "../assets/Jatra Bondhu Travel.png";
 import signature from "../assets/signature.png";
+import addressIcon from "../assets/Icon/icons8-location-48.png";
+import phoneIcon from "../assets/Icon/icons8-phone-48.png";
+import facebookIcon from "../assets/Icon/icons8-facebook-48.png";
+
 
 const Invoice = () => {
     const [invoiceData, setInvoiceData] = useState({
@@ -87,23 +91,23 @@ const Invoice = () => {
             body: tableData,
             theme: "grid", // Adds gridlines for a cleaner look
             headStyles: {
-                fillColor: [30, 144, 255], 
+                fillColor: [30, 144, 255],
                 fontStyle: 'bold',
-                textColor: [255, 255, 255], 
+                textColor: [255, 255, 255],
                 halign: 'center', // Center-align header text
                 valign: 'middle',
             },
             bodyStyles: {
                 fontSize: 10,
-                textColor: [0, 0, 0], 
-                halign: 'center', 
+                textColor: [0, 0, 0],
+                halign: 'center',
             },
             alternateRowStyles: {
-                fillColor: [240, 248, 255], 
+                fillColor: [240, 248, 255],
             },
             styles: {
                 fontSize: 10,
-                cellPadding: 4, 
+                cellPadding: 4,
             },
 
         });
@@ -125,6 +129,53 @@ const Invoice = () => {
         // Signature
         doc.addImage(signature, "PNG", 140, finalY + 40, 50, 15);
         doc.text("Authorized Signature", 150, finalY + 60);
+
+        
+
+        // Footer
+        const footerHeight = 10;
+        const footerY = doc.internal.pageSize.height - footerHeight - 10;
+        const footerX = 15; // Starting X position for the footer
+        const footerWidth = doc.internal.pageSize.width - 2 * footerX; // Usable width for the footer
+
+        doc.setFillColor(0, 0, 0); // Black background
+        doc.rect(footerX, footerY, footerWidth, footerHeight, "F");
+
+        // Icon Size and Text Positions
+        const iconSize = 4;
+        const textY = footerY + 6; // Center the text vertically within the footer
+
+        // Calculate total width of all elements combined and center them
+        const addressText = "37 New Chashara, Narayanganj";
+        const contactText = "+8801317-290009";
+        const facebookText = "facebook.com/JatraBondhu";
+
+        const addressWidth = doc.getTextWidth(addressText) + iconSize + 3; // Text width + icon size + gap
+        const contactWidth = doc.getTextWidth(contactText) + iconSize + 5;
+        const facebookWidth = doc.getTextWidth(facebookText) + iconSize + 5;
+
+        const totalContentWidth = addressWidth + contactWidth + facebookWidth + 20; // Total width of all elements + gaps
+        const startX = footerX + (footerWidth - totalContentWidth) / 2; // Starting X for centered content
+
+        // Address
+        let iconX = startX;
+        doc.addImage(addressIcon, "PNG", iconX, footerY + 3, iconSize, iconSize); // Address icon
+        doc.setFontSize(9);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(255, 255, 255); // White text
+        doc.text(addressText, iconX + iconSize + 3, textY); // Text after icon
+
+        // Contact
+        iconX += addressWidth + 10; // Move to the next section with equal gap
+        doc.addImage(phoneIcon, "PNG", iconX, footerY + 3, iconSize, iconSize); // Phone icon
+        doc.text(contactText, iconX + iconSize + 3, textY);
+
+        // Facebook
+        iconX += contactWidth + 10; // Move to the next section with equal gap
+        doc.addImage(facebookIcon, "PNG", iconX, footerY + 3, iconSize, iconSize); // Facebook icon
+        doc.text(facebookText, iconX + iconSize + 3, textY);
+
+
 
         // Save PDF
         doc.save(`${invoiceData.clientName}_${invoiceData.invoiceNumber}.pdf`);
