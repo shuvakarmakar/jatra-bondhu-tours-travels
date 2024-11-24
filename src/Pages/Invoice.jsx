@@ -61,20 +61,54 @@ const Invoice = () => {
         const doc = new jsPDF();
 
         // Company Header
-        doc.addImage(logo, "PNG", 20, 20, 20, 20);
-        doc.setFontSize(14);
-        doc.text("JATRA BONDHU TOURS & TRAVELS", 45, 20);
-        doc.setFontSize(12);
-        doc.text("37 New Chashara, Narayanganj", 45, 30);
-        doc.text("Phone: +8801317-290009 | Facebook: facebook.com/JatraBondhu", 45, 40);
+        doc.addImage(logo, "PNG", 20, 20, 25, 25); // Slightly larger logo for better visibility
 
-        // Client Information
-        doc.setFontSize(11);
-        doc.text(`Invoice To: ${invoiceData.clientName}`, 20, 50);
-        doc.text(`Cell: ${invoiceData.clientNumber}`, 20, 60);
-        doc.text(`Address: ${invoiceData.clientAddress}`, 20, 70);
-        doc.text(`Invoice#: ${invoiceData.invoiceNumber}`, 140, 50);
-        doc.text(`Date: ${invoiceData.date}`, 140, 60);
+        // Company Name
+        doc.setFontSize(18);
+        doc.setFont("helvetica", "bold");
+        doc.text("JATRA BONDHU", 50, 25);
+
+        // Invoice Text (Right Portion)
+        doc.setFontSize(22); // Larger font for "Invoice"
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(0, 0, 0); // Black color for the "Invoice" text
+        const invoiceText = "INVOICE"; // The text to be added on the right side
+        const invoiceTextWidth = doc.getTextWidth(invoiceText); // Get the width of the "Invoice" text
+        const rightPosition = doc.internal.pageSize.width - invoiceTextWidth - 30; 
+        doc.text(invoiceText, rightPosition, 25); // Position the "Invoice" text on the right, aligned with the company name
+
+        // Tagline
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "italic");
+        doc.setTextColor(50, 50, 50); // Gray color for the tagline
+        doc.text("Tours & Travels", 50, 33); // Positioned slightly below the company name
+
+
+
+        // Client Information Section
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(30, 144, 255); // Blue color for labels
+
+        // Labels
+        doc.text("Invoice To:", 20, 55);
+        doc.text("Cell:", 20, 65);
+        doc.text("Address:", 20, 75);
+        doc.text("Invoice#:", 140, 55);
+        doc.text("Date:", 140, 65);
+
+        // Reset font for values
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(0, 0, 0); // Black color for values
+
+        // Values
+        doc.text(invoiceData.clientName, 50, 55);
+        doc.text(invoiceData.clientNumber, 50, 65);
+        doc.text(invoiceData.clientAddress, 50, 75);
+        doc.text(invoiceData.invoiceNumber, 165, 55);
+        doc.text(invoiceData.date, 165, 65);
+
 
         // Product Table
         const tableData = invoiceData.products.map((product) => [
@@ -84,9 +118,12 @@ const Invoice = () => {
             product.unitPrice.toFixed(2),
             product.total.toFixed(2),
         ]);
+        // Convert 1.5 inches to millimeters (1 inch = 25.4mm)
+        const leftRightGap = 20;
+        const availableWidth = doc.internal.pageSize.width - 2 * leftRightGap;
 
         doc.autoTable({
-            startY: 80,
+            startY: 90,
             head: [["Product", "Description", "Quantity", "Unit Price (TK)", "Total (TK)"]],
             body: tableData,
             theme: "grid", // Adds gridlines for a cleaner look
@@ -94,11 +131,11 @@ const Invoice = () => {
                 fillColor: [30, 144, 255],
                 fontStyle: 'bold',
                 textColor: [255, 255, 255],
-                halign: 'center', // Center-align header text
+                halign: 'center',
                 valign: 'middle',
             },
             bodyStyles: {
-                fontSize: 10,
+                fontSize: 11,
                 textColor: [0, 0, 0],
                 halign: 'center',
             },
@@ -106,16 +143,29 @@ const Invoice = () => {
                 fillColor: [240, 248, 255],
             },
             styles: {
-                fontSize: 10,
-                cellPadding: 4,
+                fontSize: 11,
+                cellPadding: 3,
             },
+
+            tableWidth: availableWidth, // Set the width of the table
+            margin: { left: leftRightGap, right: leftRightGap },
 
         });
 
         // Totals
         const finalY = doc.lastAutoTable.finalY + 10;
         doc.setFont("helvetica", "bold");
-        doc.text(`Total: ${invoiceData.total.toFixed(2)} TK`, 140, finalY + 10);
+
+        // Increase the font size for the total
+        doc.setFontSize(14);
+
+        // Calculate the center position for the text (horizontal center)
+        const totalText = `Total: ${invoiceData.total.toFixed(2)} TK`;
+        const totalTextWidth = doc.getTextWidth(totalText);
+        const centerX = (doc.internal.pageSize.width - totalTextWidth) / 2;
+
+        // Draw the total text centered
+        doc.text(totalText, centerX, finalY + 10);
 
         // Payment Details
         doc.setFont("helvetica", "bold");
@@ -130,14 +180,25 @@ const Invoice = () => {
         doc.addImage(signature, "PNG", 140, finalY + 40, 50, 15);
         doc.text("Authorized Signature", 150, finalY + 60);
 
-        
+        // Thank You Message
+        const thankYouY = finalY + 120; // Dynamically positioned below the signature and payment details
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(12);
+        doc.setTextColor(0, 0, 0); // Black text
+        doc.text(
+            "Thank You For Being With Jatra Bondhu",
+            doc.internal.pageSize.width / 2,
+            thankYouY,
+            { align: "center" }
+        );
 
         // Footer
         const footerHeight = 10;
-        const footerY = doc.internal.pageSize.height - footerHeight - 10;
+        const footerY = doc.internal.pageSize.height - footerHeight - 10; // Footer's Y position
         const footerX = 15; // Starting X position for the footer
         const footerWidth = doc.internal.pageSize.width - 2 * footerX; // Usable width for the footer
 
+        // Black Footer Background
         doc.setFillColor(0, 0, 0); // Black background
         doc.rect(footerX, footerY, footerWidth, footerHeight, "F");
 
@@ -145,20 +206,22 @@ const Invoice = () => {
         const iconSize = 4;
         const textY = footerY + 6; // Center the text vertically within the footer
 
-        // Calculate total width of all elements combined and center them
+        // Footer Content Texts
         const addressText = "37 New Chashara, Narayanganj";
         const contactText = "+8801317-290009";
         const facebookText = "facebook.com/JatraBondhu";
 
-        const addressWidth = doc.getTextWidth(addressText) + iconSize + 3; // Text width + icon size + gap
+        // Calculate the widths of each content block (icon + text + gap)
+        const addressWidth = doc.getTextWidth(addressText) + iconSize + 5; // Icon size + text width + spacing
         const contactWidth = doc.getTextWidth(contactText) + iconSize + 5;
         const facebookWidth = doc.getTextWidth(facebookText) + iconSize + 5;
 
-        const totalContentWidth = addressWidth + contactWidth + facebookWidth + 20; // Total width of all elements + gaps
-        const startX = footerX + (footerWidth - totalContentWidth) / 2; // Starting X for centered content
+        // Calculate total width of all elements combined and center them
+        const totalContentWidth = addressWidth + contactWidth + facebookWidth + 20; // Include gaps between sections
+        const contentStartX = footerX + (footerWidth - totalContentWidth) / 2; // Start X position for centered content
 
         // Address
-        let iconX = startX;
+        let iconX = contentStartX + 12; // Start from the calculated center-aligned position
         doc.addImage(addressIcon, "PNG", iconX, footerY + 3, iconSize, iconSize); // Address icon
         doc.setFontSize(9);
         doc.setFont("helvetica", "bold");
@@ -166,12 +229,12 @@ const Invoice = () => {
         doc.text(addressText, iconX + iconSize + 3, textY); // Text after icon
 
         // Contact
-        iconX += addressWidth + 10; // Move to the next section with equal gap
+        iconX += addressWidth + 3; // Move to the next section with a gap
         doc.addImage(phoneIcon, "PNG", iconX, footerY + 3, iconSize, iconSize); // Phone icon
         doc.text(contactText, iconX + iconSize + 3, textY);
 
         // Facebook
-        iconX += contactWidth + 10; // Move to the next section with equal gap
+        iconX += contactWidth + 6; // Move to the next section with a gap
         doc.addImage(facebookIcon, "PNG", iconX, footerY + 3, iconSize, iconSize); // Facebook icon
         doc.text(facebookText, iconX + iconSize + 3, textY);
 
