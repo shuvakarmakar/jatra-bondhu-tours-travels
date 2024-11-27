@@ -219,7 +219,7 @@ const Invoice = () => {
         const thankYouY = finalY + 120; // Dynamically positioned below the signature and payment details
         doc.setFont("helvetica", "bold");
         doc.setFontSize(12);
-        doc.setTextColor(0, 0, 0); // Black text
+        doc.setTextColor(0, 0, 0); 
         doc.text(
             "Thank You For Being With Jatra Bondhu",
             doc.internal.pageSize.width / 2,
