@@ -6,6 +6,8 @@ import signature from "../assets/signature.png";
 import addressIcon from "../assets/Icon/icons8-location-48.png";
 import phoneIcon from "../assets/Icon/icons8-phone-48.png";
 import facebookIcon from "../assets/Icon/icons8-facebook-48.png";
+import paid from "../assets/Payment/Paid.png"
+import unpaid from "../assets/Payment/Unpaid.png"
 
 
 const Invoice = () => {
@@ -46,6 +48,18 @@ const Invoice = () => {
 
         }
     };
+    const deleteProduct = (index) => {
+        const updatedProducts = invoiceData.products.filter((_, i) => i !== index);
+        const subtotal = updatedProducts.reduce((sum, product) => sum + product.total, 0);
+
+        setInvoiceData({
+            ...invoiceData,
+            products: updatedProducts,
+            subtotal,
+            total: subtotal,
+        });
+    };
+
 
     const addProduct = () => {
         setInvoiceData({
@@ -147,7 +161,7 @@ const Invoice = () => {
                 cellPadding: 3,
             },
 
-            tableWidth: availableWidth, // Set the width of the table
+            tableWidth: availableWidth,
             margin: { left: leftRightGap, right: leftRightGap },
 
         });
@@ -167,14 +181,35 @@ const Invoice = () => {
         // Draw the total text centered
         doc.text(totalText, centerX, finalY + 10);
 
-        // Payment Details
+        // Payment Details: Only include if Payment Status is Paid
+        if (invoiceData.paymentStatus === "Paid") {
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "bold");
+            doc.text(`PNR: ${invoiceData.pnr}`, 20, finalY + 30);
+            doc.setFont("helvetica", "bold");
+            doc.text(`Ticket Number: ${invoiceData.ticketNumber}`, 20, finalY + 40);
+            doc.text(`Payment Method: ${invoiceData.paymentMethod}`, 20, finalY + 50);
+            doc.text(`Payment Date: ${invoiceData.paymentDate}`, 20, finalY + 60);
+        }
+
+        // Payment Status
+        const paymentStatusY = invoiceData.paymentStatus === "Paid" ? finalY + 80 : finalY + 40;
+        doc.setFontSize(12);
         doc.setFont("helvetica", "bold");
-        doc.text(`PNR: ${invoiceData.pnr}`, 20, finalY + 30, { maxWidth: 170, align: "left" });
-        doc.setFont("helvetica", "bold");
-        doc.text(`Ticket Number: ${invoiceData.ticketNumber}`, 20, finalY + 40);
-        doc.setFont("helvetica", "normal");
-        doc.text(`Payment Method: ${invoiceData.paymentMethod}`, 20, finalY + 50);
-        doc.text(`Payment Date: ${invoiceData.paymentDate}`, 20, finalY + 60);
+        doc.text("Payment Status:", 20, paymentStatusY);
+
+        // Display Paid or Unpaid with an Image
+        const paidImage = paid;
+        const unpaidImage = unpaid;
+
+        const imageX = 55; 
+        const imageSize = 30; 
+
+        if (invoiceData.paymentStatus === "Paid") {
+            doc.addImage(paidImage, "PNG", imageX, paymentStatusY - 5, imageSize, imageSize); // Paid image
+        } else {
+            doc.addImage(unpaidImage, "PNG", imageX, paymentStatusY - 5, imageSize, imageSize); // Unpaid image
+        }
 
         // Signature
         doc.addImage(signature, "PNG", 140, finalY + 40, 50, 15);
@@ -293,50 +328,71 @@ const Invoice = () => {
                     />
                 </div>
 
-                {/* Payment Information */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    {/* Payment Status */}
                     <div>
-                        <label className="block font-medium">PNR:</label>
-                        <input
-                            type="text"
-                            value={invoiceData.pnr}
-                            onChange={(e) => handleInputChange(e, "pnr")}
+                        <label className="block font-medium">Payment Status:</label>
+                        <select
+                            value={invoiceData.paymentStatus}
+                            onChange={(e) => setInvoiceData({ ...invoiceData, paymentStatus: e.target.value })}
                             className="w-full border p-2 rounded"
-                        />
+                        >
+                            <option value="Unpaid">Unpaid</option>
+                            <option value="Paid">Paid</option>
+                        </select>
                     </div>
-                    <div>
-                        <label className="block font-medium">Ticket Number:</label>
-                        <input
-                            type="text"
-                            value={invoiceData.ticketNumber}
-                            onChange={(e) => handleInputChange(e, "ticketNumber")}
-                            className="w-full border p-2 rounded"
-                        />
-                    </div>
-                    <div>
-                        <label className="block font-medium">Payment Method:</label>
-                        <input
-                            type="text"
-                            value={invoiceData.paymentMethod}
-                            onChange={(e) => handleInputChange(e, "paymentMethod")}
-                            className="w-full border p-2 rounded"
-                        />
-                    </div>
-                    <div>
-                        <label className="block font-medium">Payment Date:</label>
-                        <input
-                            type="date"
-                            value={invoiceData.paymentDate}
-                            onChange={(e) => handleInputChange(e, "paymentDate")}
-                            className="w-full border p-2 rounded"
-                        />
-                    </div>
+
+                    {/* Conditionally Render Payment Details */}
+                    {invoiceData.paymentStatus === "Paid" && (
+                        <>
+                            <div>
+                                <label className="block font-medium">PNR:</label>
+                                <input
+                                    type="text"
+                                    value={invoiceData.pnr}
+                                    onChange={(e) => handleInputChange(e, "pnr")}
+                                    className="w-full border p-2 rounded"
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-medium">Ticket Number:</label>
+                                <input
+                                    type="text"
+                                    value={invoiceData.ticketNumber}
+                                    onChange={(e) => handleInputChange(e, "ticketNumber")}
+                                    className="w-full border p-2 rounded"
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-medium">Payment Method:</label>
+                                <input
+                                    type="text"
+                                    value={invoiceData.paymentMethod}
+                                    onChange={(e) => handleInputChange(e, "paymentMethod")}
+                                    className="w-full border p-2 rounded"
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-medium">Payment Date:</label>
+                                <input
+                                    type="date"
+                                    value={invoiceData.paymentDate}
+                                    onChange={(e) => handleInputChange(e, "paymentDate")}
+                                    className="w-full border p-2 rounded"
+                                />
+                            </div>
+                        </>
+                    )}
                 </div>
+
 
                 {/* Products Section */}
                 <div className="mb-4">
                     {invoiceData.products.map((product, index) => (
-                        <div key={index} className="grid grid-cols-1 sm:grid-cols-5 gap-4 mb-4">
+                        <div
+                            key={index}
+                            className="grid grid-cols-1 sm:grid-cols-6 gap-4 mb-4 items-center"
+                        >
                             <input
                                 type="text"
                                 placeholder="Product"
@@ -372,6 +428,13 @@ const Invoice = () => {
                                 readOnly
                                 className="border p-2 rounded bg-gray-100"
                             />
+                            {/* Delete Button */}
+                            <button
+                                onClick={() => deleteProduct(index)}
+                                className="bg-red-500 text-white px-3 py-2 rounded"
+                            >
+                                Delete
+                            </button>
                         </div>
                     ))}
                     <button
@@ -381,6 +444,7 @@ const Invoice = () => {
                         Add Product
                     </button>
                 </div>
+
 
                 {/* Download Button */}
                 <button
