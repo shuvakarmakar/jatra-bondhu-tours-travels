@@ -117,6 +117,7 @@ const Invoice = () => {
         doc.setTextColor(0, 0, 0); // Black color for values
 
         // Values
+        doc.setFont("helvetica", "bold");
         doc.text(invoiceData.clientName, 50, 55);
         doc.text(invoiceData.clientNumber, 50, 65);
         doc.text(invoiceData.clientAddress, 50, 75);
