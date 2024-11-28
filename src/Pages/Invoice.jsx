@@ -1,7 +1,7 @@
 import { useState } from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import logo from "../assets/Jatra Bondhu Travel.png";
+import logo from "../assets/JB ICON.png";
 import signature from "../assets/signature.png";
 import addressIcon from "../assets/Icon/icons8-location-48.png";
 import phoneIcon from "../assets/Icon/icons8-phone-48.png";
