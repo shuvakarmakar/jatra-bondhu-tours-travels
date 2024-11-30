@@ -5,6 +5,7 @@ import Home from "../Sections/Home";
 import TermsandConditions from "../Pages/TermsandConditions";
 import Invoice from "../Pages/Invoice";
 import ETicket from "../Pages/ETicket";
+import AboutUs from "../Pages/AboutUs";
 
 
 export const router = createBrowserRouter([
@@ -23,5 +24,9 @@ export const router = createBrowserRouter([
     {
         path: "/eticket",
         element: <ETicket></ETicket>
+    },
+    {
+        path: "/aboutus",
+        element: <AboutUs></AboutUs>
     }
 ]);
