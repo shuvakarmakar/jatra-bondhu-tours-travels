@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
-import { FaFacebook, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaFileContract, FaInfoCircle, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const ContactForm = () => {
     const form = useRef();
@@ -135,27 +135,30 @@ const ContactForm = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
-                        <h2 className="text-2xl font-bold text-blue-600 mb-4">Quick Links</h2>
-                        <ul className="text-gray-700 space-y-2">
+                    <div className="">
+                        <h2 className="text-2xl sm:text-2xl font-bold text-blue-600 mb-4">Quick Links</h2>
+                        <ul className="space-y-4">
                             <li>
                                 <a
                                     href="/about-us"
-                                    className="hover:underline hover:text-blue-600"
+                                    className="flex items-center space-x-3 hover:text-blue-600 transition"
                                 >
-                                    About Us
+                                    <FaInfoCircle className="text-blue-600 text-xl sm:text-2xl" />
+                                    <span className="font-semibold text-base sm:text-lg">About Us</span>
                                 </a>
                             </li>
                             <li>
                                 <a
                                     href="/terms-and-conditions"
-                                    className="hover:underline hover:text-blue-600"
+                                    className="flex items-center space-x-3 hover:text-blue-600 transition"
                                 >
-                                    Terms and Conditions
+                                    <FaFileContract className="text-blue-600 text-xl sm:text-2xl" />
+                                    <span className="font-semibold text-base sm:text-lg">Terms and Conditions</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </section>
