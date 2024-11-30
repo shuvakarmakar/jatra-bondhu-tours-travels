@@ -69,7 +69,7 @@ const TermsandConditions = () => {
                 </p>
 
                 <p className="text-gray-700 italic">
-                    If you have any questions about these terms, please contact us at <a href="mailto:info@jatrabondhu.com" className="text-blue-500">info@jatrabondhu.com</a>.
+                    If you have any questions about these terms, please contact us at <a href="mailto:info@jatrabondhu.com" className="text-blue-500">jatrabondhu@gmail.com</a>.
                 </p>
             </div>
 

@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
         element: <ETicket></ETicket>
     },
     {
-        path: "/aboutus",
+        path: "/about-us",
         element: <AboutUs></AboutUs>
     }
 ]);

@@ -47,12 +47,13 @@ const ContactForm = () => {
             {/* Centered Headline */}
             <div className="text-center mb-10">
                 <h1 className="text-4xl font-bold text-gray-800">Contact Us</h1>
-                <p className="text-gray-600 mt-2">We’re here to help! Reach out to us with any questions or feedback.</p>
+                <p className="text-gray-600 mt-2">
+                    We’re here to help! Reach out to us with any questions or feedback.
+                </p>
             </div>
 
             {/* Contact Form and Social Media Links */}
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between bg-white rounded-lg shadow-lg">
-
                 {/* Left Side - Form */}
                 <div className="w-full md:w-1/2 p-6 bg-gradient-to-r from-teal-600 to-blue-500 text-white rounded-lg shadow-lg">
                     <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
@@ -95,44 +96,70 @@ const ContactForm = () => {
                     </form>
                 </div>
 
-                {/* Right Side - Social Media Contacts */}
-                <div className="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-4 text-center md:text-left md:pl-8 p-6">
-                    <h2 className="text-2xl font-bold text-blue-600 mb-4">Connect With Us</h2>
-                    <p className="text-gray-700 mb-4">
-                        Reach out to us on social media or chat with us directly!
-                    </p>
-                    <div className="flex flex-col space-y-4 w-full">
-                        <a
-                            href="https://www.facebook.com/JatraBondhu"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center md:justify-start space-x-3 text-blue-600 hover:text-blue-800 transition"
-                        >
-                            <FaFacebook className="text-2xl" />
-                            <span>Facebook</span>
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/company/jatra-bondhu/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center md:justify-start space-x-3 text-blue-500 hover:text-blue-700 transition"
-                        >
-                            <FaLinkedin className="text-2xl" />
-                            <span>LinkedIn</span>
-                        </a>
-                        <a
-                            href="https://wa.me/+8801317290009"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center md:justify-start space-x-3 text-green-500 hover:text-green-700 transition"
-                        >
-                            <FaWhatsapp className="text-2xl" />
-                            <span>WhatsApp</span>
-                        </a>
+                {/* Right Side - Social Media and Quick Links */}
+                <div className="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-8 text-center md:text-left md:pl-8 p-6">
+                    <div>
+                        <h2 className="text-2xl font-bold text-blue-600 mb-4">Connect With Us</h2>
+                        <p className="text-gray-700 mb-4">
+                            Reach out to us on social media or chat with us directly!
+                        </p>
+                        <div className="flex flex-col space-y-4 w-full">
+                            <a
+                                href="https://www.facebook.com/JatraBondhu"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center md:justify-start space-x-3 text-blue-600 hover:text-blue-800 transition"
+                            >
+                                <FaFacebook className="text-2xl" />
+                                <span>Facebook</span>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/company/jatra-bondhu/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center md:justify-start space-x-3 text-blue-500 hover:text-blue-700 transition"
+                            >
+                                <FaLinkedin className="text-2xl" />
+                                <span>LinkedIn</span>
+                            </a>
+                            <a
+                                href="https://wa.me/+8801317290009"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center md:justify-start space-x-3 text-green-500 hover:text-green-700 transition"
+                            >
+                                <FaWhatsapp className="text-2xl" />
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h2 className="text-2xl font-bold text-blue-600 mb-4">Quick Links</h2>
+                        <ul className="text-gray-700 space-y-2">
+                            <li>
+                                <a
+                                    href="/about-us"
+                                    className="hover:underline hover:text-blue-600"
+                                >
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/terms-and-conditions"
+                                    className="hover:underline hover:text-blue-600"
+                                >
+                                    Terms and Conditions
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
+
     );
 };
 
