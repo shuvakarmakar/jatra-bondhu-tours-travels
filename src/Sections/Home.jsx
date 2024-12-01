@@ -8,6 +8,7 @@ import TeamIntroduction from "./TeamIntroduction";
 import LiveChat from "./LiveChat";
 import Loader from "./Loader";
 import WhatsAppChat from "./WhatsappChat";
+import AirlinePartners from "./AirlinePartners";
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <Service></Service>
+            <AirlinePartners></AirlinePartners>
             <TeamIntroduction></TeamIntroduction>
             <Contact></Contact>
             <ContactForm></ContactForm>

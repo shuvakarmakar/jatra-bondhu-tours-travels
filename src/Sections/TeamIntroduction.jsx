@@ -24,9 +24,13 @@ const TeamIntroduction = () => {
 
     return (
         <section className="py-12 bg-gradient-to-r from-blue-100 to-blue-50">
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary" data-aos="fade-up">
+            <h2
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-primary"
+                data-aos="fade-up"
+            >
                 Meet Our Team
             </h2>
+
             <div className="container mx-auto grid gap-10 sm:grid-cols-1 md:grid-cols-2">
                 {teamMembers.map((member, index) => (
                     <div
