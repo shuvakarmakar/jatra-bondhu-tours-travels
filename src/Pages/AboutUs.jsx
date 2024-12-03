@@ -1,4 +1,3 @@
-import React from "react";
 import ContactForm from "../Sections/ContactForm";
 import Footer from "../Sections/Footer";
 import Navbar from "../Sections/NavBar";
