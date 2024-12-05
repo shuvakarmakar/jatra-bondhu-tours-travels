@@ -6,12 +6,17 @@ import TermsandConditions from "../Pages/TermsandConditions";
 import Invoice from "../Pages/Invoice";
 import ETicket from "../Pages/ETicket";
 import AboutUs from "../Pages/AboutUs";
+import Visa from "../Pages/Visa";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Home></Home>,
+    },
+    {
+        path: "/visa-details",
+        element: <Visa></Visa>
     },
     {
         path: "/terms-and-conditions",
