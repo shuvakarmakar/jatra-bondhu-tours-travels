@@ -55,15 +55,15 @@ const Visa = () => {
 
     return (
         <section>
-            <Navbar></Navbar>
+            <Navbar />
             <h2
-                className="text-4xl font-bold text-center mb-8 text-blue-900"
+                className="text-3xl sm:text-4xl font-bold text-center m-7 text-blue-900"
                 data-aos="fade-up"
             >
                 Visa Requirements
             </h2>
             <div
-                className="container mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                className="container mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                 data-aos="fade-up"
             >
                 {countries.map((country, index) => (
@@ -77,7 +77,7 @@ const Visa = () => {
                             alt={country.name}
                             className="w-full h-48 object-cover rounded-md mb-4"
                         />
-                        <h3 className="text-xl font-semibold text-blue-800 mb-4">
+                        <h3 className="text-lg sm:text-xl font-semibold text-blue-800 mb-4">
                             {country.name}
                         </h3>
                         <button
@@ -93,20 +93,20 @@ const Visa = () => {
             {/* Modal for Country Details */}
             {selectedCountry && (
                 <div
-                    className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center"
+                    className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4"
                     data-aos="zoom-in"
                 >
-                    <div className="bg-white rounded-lg shadow-lg w-11/12 max-w-lg p-6 relative">
+                    <div className="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
                         <button
                             className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
                             onClick={() => setSelectedCountry(null)}
                         >
                             &times;
                         </button>
-                        <h3 className="text-3xl font-bold text-blue-800 mb-4 text-center">
+                        <h3 className="text-xl sm:text-2xl font-bold text-blue-800 mb-4 text-center">
                             {selectedCountry.name} Visa Requirements
                         </h3>
-                        <p className="text-gray-700 whitespace-pre-wrap leading-relaxed">
+                        <p className="text-gray-700 whitespace-pre-wrap leading-relaxed text-sm sm:text-base">
                             {selectedCountry.details}
                         </p>
                         <button
@@ -119,6 +119,7 @@ const Visa = () => {
                 </div>
             )}
         </section>
+
     );
 };
 
