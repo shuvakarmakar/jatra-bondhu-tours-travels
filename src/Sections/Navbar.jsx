@@ -32,14 +32,13 @@ const Navbar = () => {
 
                 {/* Desktop Menu Items */}
                 <ul className="hidden md:flex space-x-8">
-                    <li><a href="#" id="nav-home" className="hover:text-yellow-300 transition">Home</a></li>
+                    <li><a href="/" id="nav-home" className="hover:text-yellow-300 transition">Home</a></li>
                     <li><a onClick={() => handleScrollToSection("services")} href="#" className="hover:text-yellow-300 transition">Our Service</a></li>
                     <li className="flex items-center space-x-2">
                         <FaBox />
                         <a href="#" id="nav-tour-package" className="hover:text-yellow-300 transition">Tour Package</a>
                     </li>
-                    <li><a href="#" id="nav-visa-info" className="hover:text-yellow-300 transition">Visa Info</a></li>
-                    <li><a href="#" id="nav-query" className="hover:text-yellow-300 transition">Query</a></li>
+                    <li><a href="/visa-info" id="nav-visa-info" className="hover:text-yellow-300 transition">Visa Info</a></li>
                     <li><a onClick={() => handleScrollToSection("contact-form")} href="#" className="hover:text-yellow-300 transition">Contact</a></li>
                 </ul>
 
@@ -82,7 +81,7 @@ const Navbar = () => {
             {isMobileMenuOpen && (
                 <div className="md:hidden bg-blue-900">
                     <ul className="flex flex-col space-y-4 p-4">
-                        <li><a href="#" id="nav-home" className="hover:text-yellow-300">Home</a></li>
+                        <li><a href="/" id="nav-home" className="hover:text-yellow-300">Home</a></li>
                         <li>
                             <a
                                 onClick={() => { handleScrollToSection("services"); setIsMobileMenuOpen(false); }}
@@ -101,14 +100,6 @@ const Navbar = () => {
                                 className="hover:text-yellow-300"
                             >
                                 Visa Info
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                onClick={() => { handleScrollToSection("query"); setIsMobileMenuOpen(false); }}
-                                className="hover:text-yellow-300"
-                            >
-                                Query
                             </a>
                         </li>
                         <li>

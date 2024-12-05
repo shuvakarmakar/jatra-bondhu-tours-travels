@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         element: <Home></Home>,
     },
     {
-        path: "/visa-details",
+        path: "/visa-info",
         element: <Visa></Visa>
     },
     {

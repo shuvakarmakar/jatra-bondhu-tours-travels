@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import Thailand from "../assets/Visa/Thailand.jpg";
 import Malaysia from "../assets/Visa/Malaysia.jpg";
 import Singapore from "../assets/Visa/Singapore.jpg";
+import Navbar from "../Sections/NavBar";
 
 const countries = [
     {
@@ -53,7 +54,8 @@ const Visa = () => {
     }, []);
 
     return (
-        <section className="py-12 bg-gray-100">
+        <section>
+            <Navbar></Navbar>
             <h2
                 className="text-4xl font-bold text-center mb-8 text-blue-900"
                 data-aos="fade-up"
