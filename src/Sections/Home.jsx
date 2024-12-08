@@ -9,6 +9,7 @@ import LiveChat from "./LiveChat";
 import Loader from "./Loader";
 import WhatsAppChat from "./WhatsappChat";
 import AirlinePartners from "./AirlinePartners";
+import TourPackage from "../Pages/TourPackage";
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <Service></Service>
+            <TourPackage></TourPackage>
             <AirlinePartners></AirlinePartners>
             <TeamIntroduction></TeamIntroduction>
             <Contact></Contact>
