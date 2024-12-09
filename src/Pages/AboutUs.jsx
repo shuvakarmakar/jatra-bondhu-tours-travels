@@ -1,11 +1,6 @@
-import ContactForm from "../Sections/ContactForm";
-import Footer from "../Sections/Footer";
-import Navbar from "../Sections/NavBar";
-
 const AboutUs = () => {
     return (
         <section>
-            <Navbar></Navbar>
             <div className="bg-gray-100 min-h-screen flex items-center justify-center">
                 <div className="bg-white rounded-lg shadow-lg p-8 sm:p-12 max-w-4xl text-center">
                     <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
@@ -146,8 +141,6 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <ContactForm></ContactForm>
-            <Footer></Footer>
         </section>
     );
 };
