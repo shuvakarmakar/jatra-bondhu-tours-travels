@@ -5,6 +5,7 @@ import TeamIntroduction from "./TeamIntroduction";
 import AirlinePartners from "./AirlinePartners";
 import TourPackage from "../Pages/TourPackage";
 import Loader from "./Loader";
+import WhatsAppChat from "./WhatsappChat";
 
 const Home = () => {
     return (
@@ -16,7 +17,7 @@ const Home = () => {
             <AirlinePartners></AirlinePartners>
             <TeamIntroduction></TeamIntroduction>
             <Contact></Contact>
-            {/* <LiveChat></LiveChat> */}
+            <WhatsAppChat></WhatsAppChat>
         </div>
     );
 };
