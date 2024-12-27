@@ -31,7 +31,7 @@ const Banner = () => {
                             wrapper="p"
                             className="text-lg md:text-2xl mb-8"
                             cursor={true}
-                            repeat={Infinity} // Infinite repeat for the animation loop
+                            repeat={Infinity} 
                         />
 
                         <a
