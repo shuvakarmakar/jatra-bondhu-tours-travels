@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaBox, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../assets/Jatra Bondhu Travel.png';
 
@@ -31,16 +32,20 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Menu Items */}
-                <ul className="hidden md:flex space-x-8">
-                    <li><a href="/" id="nav-home" className="hover:text-yellow-300 transition">Home</a></li>
-                    <li><a onClick={() => handleScrollToSection("services")} href="#" className="hover:text-yellow-300 transition">Our Service</a></li>
-                    <li className="flex items-center space-x-2">
+                <div className="hidden md:flex space-x-8">
+                    <NavLink to="/" id="nav-home" className="hover:text-yellow-300 transition">Home</NavLink>
+                    <NavLink to="#" onClick={() => handleScrollToSection("services")} className="hover:text-yellow-300 transition">
+                        Our Service
+                    </NavLink>
+                    <NavLink to="#" className="hover:text-yellow-300 transition flex items-center space-x-2">
                         <FaBox />
-                        <a href="#" id="nav-tour-package" className="hover:text-yellow-300 transition">Tour Package</a>
-                    </li>
-                    <li><a href="/visa-info" id="nav-visa-info" className="hover:text-yellow-300 transition">Visa Info</a></li>
-                    <li><a onClick={() => handleScrollToSection("contact-form")} href="#" className="hover:text-yellow-300 transition">Contact</a></li>
-                </ul>
+                        <span>Tour Package</span>
+                    </NavLink>
+                    <NavLink to="/visa-info" id="nav-visa-info" className="hover:text-yellow-300 transition">Visa Info</NavLink>
+                    <NavLink to="#" onClick={() => handleScrollToSection("contact-form")} className="hover:text-yellow-300 transition">
+                        Contact
+                    </NavLink>
+                </div>
 
                 {/* Contact Info */}
                 <div className="hidden md:flex flex-col items-end space-y-1 text-right">
@@ -80,46 +85,42 @@ const Navbar = () => {
             {/* Mobile Menu Items */}
             {isMobileMenuOpen && (
                 <div className="md:hidden bg-blue-900">
-                    <ul className="flex flex-col space-y-4 p-4">
-                        <li><a href="/" id="nav-home" className="hover:text-yellow-300">Home</a></li>
-                        <li>
-                            <a
-                                onClick={() => { handleScrollToSection("services"); setIsMobileMenuOpen(false); }}
-                                className="hover:text-yellow-300"
-                            >
-                                Our Service
-                            </a>
-                        </li>
-                        <li className="flex items-center space-x-2">
+                    <div className="flex flex-col space-y-4 p-4">
+                        <NavLink to="/" id="nav-home" className="hover:text-yellow-300">Home</NavLink>
+                        <NavLink
+                            to="#"
+                            onClick={() => { handleScrollToSection("services"); setIsMobileMenuOpen(false); }}
+                            className="hover:text-yellow-300"
+                        >
+                            Our Service
+                        </NavLink>
+                        <NavLink to="#" className="hover:text-yellow-300 flex items-center space-x-2">
                             <FaBox />
-                            <a href="#" id="nav-tour-package" className="hover:text-yellow-300">Tour Package</a>
-                        </li>
-                        <li>
-                            <a
-                                onClick={() => { handleScrollToSection("visa-info"); setIsMobileMenuOpen(false); }}
-                                className="hover:text-yellow-300"
-                            >
-                                Visa Info
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                onClick={() => { handleScrollToSection("contact-form"); setIsMobileMenuOpen(false); }}
-                                className="hover:text-yellow-300"
-                            >
-                                Contact
-                            </a>
-                        </li>
-
-                        <li className="flex flex-col items-start">
+                            <span>Tour Package</span>
+                        </NavLink>
+                        <NavLink
+                            to="/visa-info"
+                            id="nav-visa-info"
+                            className="hover:text-yellow-300"
+                        >
+                            Visa Info
+                        </NavLink>
+                        <NavLink
+                            to="#"
+                            onClick={() => { handleScrollToSection("contact-form"); setIsMobileMenuOpen(false); }}
+                            className="hover:text-yellow-300"
+                        >
+                            Contact
+                        </NavLink>
+                        <div className="flex flex-col items-start">
                             <span id="contact-number" className="flex items-center space-x-1 text-sm">
                                 <FaPhoneAlt /> <span>+8801317290009</span>
                             </span>
                             <span id="address" className="flex items-center space-x-1 text-sm">
                                 <FaMapMarkerAlt /> <span>Narayanganj</span>
                             </span>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             )}
         </nav>
