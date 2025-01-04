@@ -1,48 +1,94 @@
-import heroImage from '../assets/image.jpg';
+import { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import travel1 from '../assets/Banner/Banner 1.jpg'; 
+import travel2 from '../assets/Banner/Banner 2.jpg'; 
+import travel3 from '../assets/Banner/Banner 3.jpg'; 
+
 
 const Banner = () => {
+    const images = [travel1, travel2, travel3];
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+        }, 3000); // Change slide every 3 seconds
+
+        return () => clearInterval(interval); 
+    }, [images.length]);
+
     return (
-        <div className="banner-container">
-            {/* Hero Section */}
-            <section
-                id="hero"
-                className="relative bg-cover bg-center h-screen"
-                style={{ backgroundImage: `url(${heroImage})` }}
-            >
-                <div className="bg-opacity-60 h-full flex items-center">
-                    <div className="container mx-auto flex flex-col justify-center items-center text-white text-center px-4">
-                        <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
-                            Welcome to Jatra Bondhu
-                        </h1>
-
-                        {/* Type Animation for tagline */}
-                        <TypeAnimation
-                            sequence={[
-                                'Your Trusted Partner for Unforgettable Journeys', // Initial sentence
-                                2000, // Pause for 2 seconds
-                                'Explore the World with Us', // Second sentence
-                                2000, // Pause for 2 seconds
-                                'Travel Beyond Boundaries', // Third sentence
-                                2000, // Pause for 2 seconds
-                                'Best Travel Agency In Bangladesh', // Fourth sentence
-                                2000, // Pause for 2 seconds
-                            ]}
-                            wrapper="p"
-                            className="text-lg md:text-2xl mb-8"
-                            cursor={true}
-                            repeat={Infinity} 
+        <div className="relative w-full">
+            {/* Carousel Section */}
+            <div className="carousel w-full h-[50vh] lg:h-[90vh] overflow-hidden">
+                {images.map((src, index) => (
+                    <div
+                        key={index}
+                        className={`carousel-item w-full h-full ${currentSlide === index ? 'block' : 'hidden'
+                            }`}
+                    >
+                        <img
+                            src={src}
+                            alt={`Slide ${index}`}
+                            className="w-full h-full object-cover"
                         />
-
-                        <a
-                            href="#services"
-                            className="btn bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition"
-                        >
-                            Explore Our Services
-                        </a>
                     </div>
+                ))}
+            </div>
+
+            {/* Overlay Section */}
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white bg-gradient-to-b from-black via-transparent to-black px-4 text-center">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-wide drop-shadow-lg">
+                    Welcome to Jatra Bondhu
+                </h1>
+                <TypeAnimation
+                    sequence={[
+                        'Explore the World with Us',
+                        1500,
+                        'Unforgettable Journeys Await',
+                        1500,
+                        'Your Trusted Travel Partner',
+                        1500,
+                    ]}
+                    speed={50}
+                    wrapper="span"
+                    repeat={Infinity}
+                    className="text-lg md:text-xl lg:text-2xl font-medium mt-4 drop-shadow-lg"
+                />
+                <div className="mt-6 flex flex-col md:flex-row gap-4">
+                    <button
+                        onClick={() => {
+                            const targetSection = document.getElementById('services');
+                            if (targetSection) {
+                                targetSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                        className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-700 hover:from-yellow-600 hover:to-yellow-800 text-white font-bold rounded-full shadow-lg"
+                    >
+                        Discover Our Services
+                    </button>
                 </div>
-            </section>
+            </div>
+
+            {/* Manual Navigation */}
+            <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
+                <button
+                    onClick={() =>
+                        setCurrentSlide(
+                            (currentSlide - 1 + images.length) % images.length
+                        )
+                    }
+                    className="btn btn-circle btn-outline text-white"
+                >
+                    ❮
+                </button>
+                <button
+                    onClick={() => setCurrentSlide((currentSlide + 1) % images.length)}
+                    className="btn btn-circle btn-outline text-white"
+                >
+                    ❯
+                </button>
+            </div>
         </div>
     );
 };
