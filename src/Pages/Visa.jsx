@@ -53,7 +53,7 @@ const Visa = () => {
     }, []);
 
     return (
-        <section>
+        <section className="lg:min-h-screen">
             <h2
                 className="text-3xl sm:text-4xl font-bold text-center m-7 text-blue-900"
                 data-aos="fade-up"

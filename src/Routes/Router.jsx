@@ -8,6 +8,7 @@ import ETicket from "../Pages/ETicket";
 import AboutUs from "../Pages/AboutUs";
 import Visa from "../Pages/Visa";
 import Main from "../Layout/Main";
+import ImportantWebsite from "../Pages/ImportantWebsite";
 
 
 export const router = createBrowserRouter([
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
             {
                 path: "/about-us",
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path: "/important-website",
+                element: <ImportantWebsite></ImportantWebsite>
             }
         ]
     }

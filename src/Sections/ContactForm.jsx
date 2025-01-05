@@ -3,7 +3,6 @@ import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import { FaFacebook, FaFileContract, FaInfoCircle, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { SiWebex } from "react-icons/si";
-import { FaWebAwesome } from 'react-icons/fa6';
 
 
 const ContactForm = () => {

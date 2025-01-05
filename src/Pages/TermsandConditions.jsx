@@ -1,7 +1,7 @@
 
 const TermsandConditions = () => {
     return (
-        <section>
+        <section className="lg:min-h-screen">
             <div className="py-16 bg-gray-50 px-8">
                 <div className="container mx-auto max-w-5xl bg-white shadow-lg rounded-lg p-8">
                     <h1
