@@ -2,6 +2,9 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import { FaFacebook, FaFileContract, FaInfoCircle, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { SiWebex } from "react-icons/si";
+import { FaWebAwesome } from 'react-icons/fa6';
+
 
 const ContactForm = () => {
     const form = useRef();
@@ -154,6 +157,15 @@ const ContactForm = () => {
                                 >
                                     <FaFileContract className="text-blue-600 text-xl sm:text-2xl" />
                                     <span className="font-semibold text-base sm:text-lg">Terms and Conditions</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/important-website"
+                                    className="flex items-center space-x-3 hover:text-blue-600 transition"
+                                >
+                                    <SiWebex className="text-blue-600 text-xl sm:text-2xl" />
+                                    <span className="font-semibold text-base sm:text-lg">Important Website</span>
                                 </a>
                             </li>
                         </ul>
