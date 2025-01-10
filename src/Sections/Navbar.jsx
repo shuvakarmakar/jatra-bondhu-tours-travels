@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaBox, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../assets/Jatra Bondhu Travel.png';
 
 const Navbar = () => {
@@ -12,12 +12,12 @@ const Navbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const handleScrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
-    };
+    // const handleScrollToSection = (sectionId) => {
+    //     const section = document.getElementById(sectionId);
+    //     if (section) {
+    //         section.scrollIntoView({ behavior: "smooth" });
+    //     }
+    // };
 
     return (
         <nav className="bg-gradient-to-r from-blue-800 to-blue-600 text-white shadow-lg">
@@ -34,17 +34,13 @@ const Navbar = () => {
                 {/* Desktop Menu Items */}
                 <div className="hidden md:flex space-x-8">
                     <NavLink to="/" id="nav-home" className="hover:text-yellow-300 transition">Home</NavLink>
-                    <NavLink to="#" onClick={() => handleScrollToSection("services")} className="hover:text-yellow-300 transition">
+                    {/* <NavLink to="#" onClick={() => handleScrollToSection("services")} className="hover:text-yellow-300 transition">
                         Our Service
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink to="#" className="hover:text-yellow-300 transition flex items-center space-x-2">
-                        <FaBox />
                         <span>Tour Package</span>
                     </NavLink>
                     <NavLink to="/visa-info" id="nav-visa-info" className="hover:text-yellow-300 transition">Visa Info</NavLink>
-                    <NavLink to="#" onClick={() => handleScrollToSection("contact-form")} className="hover:text-yellow-300 transition">
-                        Contact
-                    </NavLink>
                 </div>
 
                 {/* Contact Info */}
@@ -87,15 +83,14 @@ const Navbar = () => {
                 <div className="md:hidden bg-blue-900">
                     <div className="flex flex-col space-y-4 p-4">
                         <NavLink to="/" id="nav-home" className="hover:text-yellow-300">Home</NavLink>
-                        <NavLink
+                        {/* <NavLink
                             to="#"
                             onClick={() => { handleScrollToSection("services"); setIsMobileMenuOpen(false); }}
                             className="hover:text-yellow-300"
                         >
                             Our Service
-                        </NavLink>
+                        </NavLink> */}
                         <NavLink to="#" className="hover:text-yellow-300 flex items-center space-x-2">
-                            <FaBox />
                             <span>Tour Package</span>
                         </NavLink>
                         <NavLink
@@ -104,13 +99,6 @@ const Navbar = () => {
                             className="hover:text-yellow-300"
                         >
                             Visa Info
-                        </NavLink>
-                        <NavLink
-                            to="#"
-                            onClick={() => { handleScrollToSection("contact-form"); setIsMobileMenuOpen(false); }}
-                            className="hover:text-yellow-300"
-                        >
-                            Contact
                         </NavLink>
                         <div className="flex flex-col items-start">
                             <span id="contact-number" className="flex items-center space-x-1 text-sm">
