@@ -25,26 +25,26 @@ export const router = createBrowserRouter([
                 element: <Visa></Visa>
             },
             {
-                path: "/terms-and-conditions",
-                element: <TermsandConditions></TermsandConditions>
-            },
-            {
-                path: "/invoice",
-                element: <Invoice></Invoice>
-            },
-            {
                 path: "/eticket",
                 element: <ETicket></ETicket>
             },
-            {
-                path: "/about-us",
-                element: <AboutUs></AboutUs>
-            },
-            {
-                path: "/important-website",
-                element: <ImportantWebsite></ImportantWebsite>
-            }
         ]
+    },
+    {
+        path: "/invoice",
+        element: <Invoice></Invoice>
+    },
+    {
+        path: "/terms-and-conditions",
+        element: <TermsandConditions></TermsandConditions>
+    },
+    {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>
+    },
+    {
+        path: "/important-website",
+        element: <ImportantWebsite></ImportantWebsite>
     }
 
 ]);
