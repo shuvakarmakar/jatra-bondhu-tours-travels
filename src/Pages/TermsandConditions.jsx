@@ -4,11 +4,9 @@ const TermsandConditions = () => {
         <section className="lg:min-h-screen">
             <div className="py-16 bg-gray-50 px-8">
                 <div className="container mx-auto max-w-5xl bg-white shadow-lg rounded-lg p-8">
-                    <h1
-                        className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-center mb-6 text-primary"
-                    >
+                    <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
                         Terms and Conditions
-                    </h1>
+                    </h2>
 
                     <p className="text-gray-700 mb-4 text-justify">
                         Welcome to Jatra Bondhu! By accessing or using our website and services, you agree to comply with and be bound by the following terms and conditions. Please read them carefully.
