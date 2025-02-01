@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../Components/Dashboard/Sidebar";
-import Footer from "../Sections/Footer";
-
 const Dashboard = () => {
     return (
         <div className="min-h-screen flex flex-col">

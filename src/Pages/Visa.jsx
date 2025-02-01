@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";  // Import Helmet
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Thailand from "../assets/Visa/Thailand.jpg";
@@ -17,7 +18,7 @@ const countries = [
             - Salary bank statement or salary certificate.
             - Employee ID card copy & visiting card.
             - Marriage certificate copy (if spouse's name isn’t mentioned in the passport).
-            
+
             **Business Owners**:
             - 7 Months Valid Passport (with old passport if available).
             - Trade license (renewed, notarized, and translated).
@@ -54,62 +55,56 @@ const Visa = () => {
 
     return (
         <section className="lg:min-h-screen">
+            {/* Helmet for SEO */}
+            <Helmet>
+                <title>Visa Requirements | Jatra Bondhu Tours & Travels</title>
+                <meta name="description" content="Explore visa requirements for Thailand, Malaysia, and Singapore with Jatra Bondhu Tours & Travels. Get detailed information for job holders and business owners." />
+                <meta name="keywords" content="Visa Requirements, Thailand Visa, Malaysia Visa, Singapore Visa, Travel Documents, Jatra Bondhu Tours & Travels" />
+                <link rel="canonical" href="https://jatrabondhu.com/visa-info" />
+            </Helmet>
+
             <h2
                 className="text-3xl sm:text-4xl font-bold text-center m-7 text-blue-900"
                 data-aos="fade-up"
             >
                 Visa Requirements
             </h2>
-            <div
-                className="container mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                data-aos="fade-up"
-            >
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 lg:px-20">
                 {countries.map((country, index) => (
                     <div
                         key={index}
-                        className="card bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl"
-                        data-aos="zoom-in"
+                        className="border rounded-xl shadow-md p-4 cursor-pointer hover:shadow-lg transition"
+                        data-aos="fade-up"
+                        onClick={() => setSelectedCountry(country)}
                     >
                         <img
                             src={country.image}
                             alt={country.name}
-                            className="w-full h-48 object-cover rounded-md mb-4"
+                            className="w-full h-48 object-cover rounded-md"
                         />
-                        <h3 className="text-lg sm:text-xl font-semibold text-blue-800 mb-4">
+                        <h3 className="text-xl font-semibold text-center mt-4">
                             {country.name}
                         </h3>
-                        <button
-                            className="btn btn-primary w-full"
-                            onClick={() => setSelectedCountry(country)}
-                        >
-                            View Details
-                        </button>
                     </div>
                 ))}
             </div>
 
-            {/* Modal for Country Details */}
             {selectedCountry && (
                 <div
-                    className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4"
-                    data-aos="zoom-in"
+                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+                    onClick={() => setSelectedCountry(null)}
                 >
-                    <div className="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
+                    <div
+                        className="bg-white rounded-lg shadow-lg p-6 max-w-lg mx-auto"
+                        onClick={(e) => e.stopPropagation()}
+                        data-aos="fade-up"
+                    >
+                        <h3 className="text-2xl font-bold mb-4">{selectedCountry.name} Visa Details</h3>
+                        <p className="whitespace-pre-line">{selectedCountry.details}</p>
                         <button
-                            className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 text-2xl"
                             onClick={() => setSelectedCountry(null)}
-                        >
-                            &times;
-                        </button>
-                        <h3 className="text-xl sm:text-2xl font-bold text-blue-800 mb-4 text-center">
-                            {selectedCountry.name} Visa Requirements
-                        </h3>
-                        <p className="text-gray-700 whitespace-pre-wrap leading-relaxed text-sm sm:text-base">
-                            {selectedCountry.details}
-                        </p>
-                        <button
-                            className="btn btn-secondary mt-6 mx-auto block"
-                            onClick={() => setSelectedCountry(null)}
+                            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
                         >
                             Close
                         </button>
@@ -117,7 +112,6 @@ const Visa = () => {
                 </div>
             )}
         </section>
-
     );
 };
 
