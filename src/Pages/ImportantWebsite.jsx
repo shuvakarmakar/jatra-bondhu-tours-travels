@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const websites = [
@@ -36,6 +37,25 @@ const websites = [
 const ImportantWebsite = () => {
     return (
         <section className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+            {/* Helmet for SEO and Meta Tags */}
+            <Helmet>
+                <title>Important Websites for Travelers | Jatra Bondhu Tours & Travels</title>
+                <meta
+                    name="description"
+                    content="Access essential websites for travelers, including passport services, consular services, travel regulations, and more."
+                />
+                <link rel="canonical" href="https://www.jatrabondhu.com/important-websites" />
+                <meta property="og:title" content="Important Websites for Travelers | Jatra Bondhu Tours & Travels" />
+                <meta property="og:description" content="Explore vital websites for travelers to ensure smooth travel experiences and access essential services." />
+                <meta property="og:image" content="https://www.jatrabondhu.com/images/important-websites.jpg" />
+                <meta property="og:url" content="https://www.jatrabondhu.com/important-websites" />
+                <meta property="og:type" content="website" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Important Websites for Travelers | Jatra Bondhu Tours & Travels" />
+                <meta name="twitter:description" content="Discover useful websites for travelers to get passport services, consular help, tourism insights, and more!" />
+                <meta name="twitter:image" content="https://www.jatrabondhu.com/images/important-websites.jpg" />
+            </Helmet>
+
             <div className="container mx-auto">
                 <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
                     Important Websites for Travelers
