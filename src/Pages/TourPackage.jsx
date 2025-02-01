@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 
 const packages = [
     { title: "Kuala Lumpur + Batam (Indonesia) + Singapore + Vietnam", price: "135000৳", duration: "9 Days & 8 Nights", region: "Asia" },
@@ -37,6 +38,19 @@ const TourPackage = () => {
 
     return (
         <section className="py-12 bg-gray-50">
+            {/* Helmet for SEO and Meta Tags */}
+            <Helmet>
+                <title>Tour Packages | Jatra Bondhu Tours & Travels</title>
+                <meta
+                    name="description"
+                    content="Explore a variety of affordable and unforgettable tour packages across Asia with Jatra Bondhu. Book your dream vacation today!"
+                />
+                <link rel="canonical" href="https://www.jatrabondhu.com/tour-packages" />
+                <meta property="og:title" content="Tour Packages | Jatra Bondhu Tours & Travels" />
+                <meta property="og:description" content="Discover exclusive tour packages to top destinations like Singapore, Bali, Egypt, and more with Jatra Bondhu." />
+                <meta property="og:url" content="https://www.jatrabondhu.com/tour-packages" />
+                <meta property="og:type" content="website" />
+            </Helmet>
             <h2
                 className="text-4xl font-bold text-center mb-8 text-blue-900"
                 data-aos="fade-up"

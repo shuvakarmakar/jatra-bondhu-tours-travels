@@ -36,7 +36,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="#"
+                            to="/tour-packages"
                             className="text-white hover:text-yellow-300 font-semibold transition"
                         >
                             Tour Packages
@@ -88,7 +88,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="#"
+                                to="/tour-packages"
                                 className="text-white hover:text-yellow-300 font-semibold transition"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >

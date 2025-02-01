@@ -1,6 +1,19 @@
+import { Helmet } from "react-helmet-async";
+
 const AboutUs = () => {
     return (
         <section>
+            {/* Helmet for SEO and Meta Tags */}
+            <Helmet>
+                <title>About Us | Jatra Bondhu Tours & Travels</title>
+                <meta
+                    name="description"
+                    content="Learn more about Jatra Bondhu Tours & Travels, your trusted partner in creating unforgettable travel experiences based in Narayanganj."
+                />
+
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://www.jatrabondhu.com/about-us" />
+            </Helmet>
             <div className="bg-gray-100 min-h-screen flex items-center justify-center">
                 <div className="bg-white rounded-lg shadow-lg p-8 sm:p-12 max-w-4xl text-center">
                     <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">

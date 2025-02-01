@@ -1,13 +1,24 @@
+import { Helmet } from "react-helmet-async";
 
 const TermsandConditions = () => {
     return (
         <section className="lg:min-h-screen">
-            <div className="py-16 bg-gray-50 px-8">
+            <Helmet>
+                <title>Terms and Conditions | Jatra Bondhu Tours & Travels</title>
+                <meta
+                    name="description"
+                    content="Review the terms and conditions of Jatra Bondhu Tours & Travels regarding bookings, payments, cancellations, and liabilities."
+                />
+
+                {/* Canonical Link */}
+                <link rel="canonical" href="https://www.jatrabondhu.com/terms-and-conditions" />
+            </Helmet>
+
+            <div className="bg-gray-100 min-h-screen flex items-center justify-center">
                 <div className="container mx-auto max-w-5xl bg-white shadow-lg rounded-lg p-8">
                     <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
                         Terms and Conditions
                     </h2>
-
                     <p className="text-gray-700 mb-4 text-justify">
                         Welcome to Jatra Bondhu! By accessing or using our website and services, you agree to comply with and be bound by the following terms and conditions. Please read them carefully.
                     </p>

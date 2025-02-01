@@ -9,6 +9,7 @@ import AboutUs from "../Pages/AboutUs";
 import Visa from "../Pages/Visa";
 import Main from "../Layout/Main";
 import ImportantWebsite from "../Pages/ImportantWebsite";
+import TourPackage from "../Pages/TourPackage";
 
 
 export const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
             {
                 path: "/visa-info",
                 element: <Visa></Visa>
+            },
+            {
+                path: "/tour-packages",
+                element: <TourPackage></TourPackage>
             },
             {
                 path: "/terms-and-conditions",
