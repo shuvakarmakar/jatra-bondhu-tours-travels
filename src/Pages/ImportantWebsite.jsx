@@ -47,13 +47,8 @@ const ImportantWebsite = () => {
                 <link rel="canonical" href="https://www.jatrabondhu.com/important-websites" />
                 <meta property="og:title" content="Important Websites for Travelers | Jatra Bondhu Tours & Travels" />
                 <meta property="og:description" content="Explore vital websites for travelers to ensure smooth travel experiences and access essential services." />
-                <meta property="og:image" content="https://www.jatrabondhu.com/images/important-websites.jpg" />
                 <meta property="og:url" content="https://www.jatrabondhu.com/important-websites" />
                 <meta property="og:type" content="website" />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Important Websites for Travelers | Jatra Bondhu Tours & Travels" />
-                <meta name="twitter:description" content="Discover useful websites for travelers to get passport services, consular help, tourism insights, and more!" />
-                <meta name="twitter:image" content="https://www.jatrabondhu.com/images/important-websites.jpg" />
             </Helmet>
 
             <div className="container mx-auto">

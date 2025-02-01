@@ -40,10 +40,10 @@ const Loader = () => {
                 />
                 {/* Loader Text */}
                 <h2 className="text-cyan-300 text-lg md:text-2xl lg:text-3xl font-bold tracking-wide animate-pulse">
-                    🌍 Preparing your adventure... ✈️
+                    🌍 Preparing Your Adventure... ✈️
                 </h2>
                 <p className="text-cyan-500 text-sm md:text-lg italic">
-                    Fasten your seatbelt for takeoff!
+                    Fasten Your Seatbelt For Takeoff!
                 </p>
             </div>
         </motion.div>

@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
                 element: <AboutUs></AboutUs>
             },
             {
-                path: "/important-website",
+                path: "/important-websites",
                 element: <ImportantWebsite></ImportantWebsite>
             }
         ]
