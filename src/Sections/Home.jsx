@@ -6,6 +6,7 @@ import TeamIntroduction from "./TeamIntroduction";
 import AirlinePartners from "./AirlinePartners";
 import Loader from "./Loader";
 import WhatsAppChat from "./WhatsappChat";
+import LiveChat from "./LiveChat";
 
 const Home = () => {
     return (
@@ -43,6 +44,7 @@ const Home = () => {
             <TeamIntroduction />
             <Contact />
             <WhatsAppChat />
+            <LiveChat></LiveChat>
         </div>
     );
 };
