@@ -4,7 +4,7 @@ const TermsandConditions = () => {
     return (
         <section className="lg:min-h-screen">
             <Helmet>
-                <title>Terms and Conditions | Jatra Bondhu Tours & Travels</title>
+                <title>Terms and Conditions</title>
                 <meta
                     name="description"
                     content="Review the terms and conditions of Jatra Bondhu Tours & Travels regarding bookings, payments, cancellations, and liabilities."
@@ -12,7 +12,11 @@ const TermsandConditions = () => {
 
                 {/* Canonical Link */}
                 <link rel="canonical" href="https://www.jatrabondhu.com/terms-and-conditions" />
+
+                {/* Additional Meta Tags for SEO */}
+                <meta name="keywords" content="Terms and Conditions, Booking Terms, Payment Terms, Cancellation Policy, Travel Terms and Conditions, Liability Disclaimer, Travel Booking Policy, Refund Policy, Travel Agency Terms, Booking Cancellation, Travel Service Terms, Terms of Service, Terms for Travel Packages, Payment Methods, Travel Refunds, Terms and Conditions for Flights, Hotel Bookings, Visa Services, Customer Rights, Travel Agreement, Travel Package Terms, Terms and Conditions Bangladesh, Online Booking Terms, Travel Agency Payment Terms, Conditions for Tour Packages, Travel Liability, Jatra Bondhu Terms, Customer Support Policy, Travel Service Agreement" />
             </Helmet>
+
 
             <div className="bg-gray-100 min-h-screen flex items-center justify-center">
                 <div className="container mx-auto max-w-5xl bg-white shadow-lg rounded-lg p-8">

@@ -5,24 +5,42 @@ const AboutUs = () => {
         <section>
             {/* Helmet for SEO and Meta Tags */}
             <Helmet>
-                <title>About Us | Jatra Bondhu Tours & Travels</title>
+                <title>About Us</title>
+
                 <meta
                     name="description"
-                    content="Learn more about Jatra Bondhu Tours & Travels, your trusted partner in creating unforgettable travel experiences based in Narayanganj."
+                    content="Discover Jatra Bondhu Tours & Travels, your trusted travel partner based in Narayanganj, Bangladesh. We specialize in customized travel packages, flight bookings, and unforgettable journeys."
                 />
+
+                <meta
+                    name="keywords"
+                    content="Jatra Bondhu, About Jatra Bondhu, Tours and Travels Bangladesh, Travel Agency Narayanganj, Custom Travel Packages, Flight Booking Bangladesh, Holiday Packages, Trusted Travel Partner Bangladesh"
+                />
+
+                <meta name="author" content="Jatra Bondhu Tours & Travels" />
+                <meta name="robots" content="index, follow" />
 
                 {/* Canonical URL */}
                 <link rel="canonical" href="https://www.jatrabondhu.com/about-us" />
+
+                {/* Open Graph Tags for Social Media */}
+                <meta property="og:title" content="About Us" />
+                <meta property="og:description" content="Learn about Jatra Bondhu Tours & Travels, the leading travel agency at Narayanganj in Bangladesh, offering customized tours, flight deals, and unforgettable travel experiences." />
+                <meta property="og:url" content="https://www.jatrabondhu.com/about-us" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Jatra Bondhu Tours & Travels" />
+
             </Helmet>
+
             <div className="bg-gray-100 min-h-screen flex items-center justify-center">
                 <div className="bg-white rounded-lg shadow-lg p-8 sm:p-12 max-w-4xl text-center">
                     <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
                         About Us
                     </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                    <p className="text-black text-lg leading-relaxed mb-6">
                         Welcome to <span className="font-semibold">Jatra Bondhu Tours & Travels</span>, your trusted partner in creating unforgettable travel experiences. Based in the heart of Narayanganj, we specialize in delivering the best travel services tailored to meet your needs. From booking flights to planning your next vacation, we are dedicated to making your journey seamless, enjoyable, and memorable.
                     </p>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                    <p className="text-black text-lg leading-relaxed mb-6">
                         At Jatra Bondhu, our mission is to provide exceptional customer service and to ensure your travel dreams become a reality. With years of experience and a passion for travel, we aim to be more than just a travel agency—we strive to be your travel companion.
                     </p>
 

@@ -40,17 +40,37 @@ const TourPackage = () => {
         <section className="py-12 bg-gray-50">
             {/* Helmet for SEO and Meta Tags */}
             <Helmet>
-                <title>Tour Packages | Jatra Bondhu Tours & Travels</title>
+                <title>Tour Packages</title>
+
                 <meta
                     name="description"
-                    content="Explore a variety of affordable and unforgettable tour packages across Asia with Jatra Bondhu. Book your dream vacation today!"
+                    content="Explore a wide range of affordable and unforgettable tour packages across Asia, Europe, and beyond with Jatra Bondhu Tours & Travels. Book your dream vacation today and create lifelong memories!"
                 />
+
+                <meta
+                    name="keywords"
+                    content="Tour Packages, Affordable Travel Packages, Custom Holiday Packages, Jatra Bondhu Tours, Asia Tours, Europe Travel Deals, Honeymoon Packages, Family Vacations, Flight and Hotel Deals, Singapore Tours, Bali Holiday Packages, Egypt Travel Deals, Best Travel Agency in Bangladesh, Budget Travel Packages, Luxury Tour Packages, Group Travel Packages, Luxury Vacations, Exotic Destinations, Adventure Tour Packages, Beach Holidays, International Tour Packages, European Vacations, Best Deals on Tours, Customizable Tours, Tailored Holiday Packages, Worldwide Travel Deals, Seasonal Tour Packages, Adventure Travel, Family Tour Packages, Top Travel Destinations"
+                />
+
+                <meta name="author" content="Jatra Bondhu Tours & Travels" />
+                <meta name="robots" content="index, follow" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="geo.region" content="BD-D" />
+                <meta name="geo.placename" content="Narayanganj" />
+                <meta name="geo.position" content="23.6238;90.5019" />
+                <meta name="ICBM" content="23.6238, 90.5019" />
+
+                {/* Canonical URL */}
                 <link rel="canonical" href="https://www.jatrabondhu.com/tour-packages" />
-                <meta property="og:title" content="Tour Packages | Jatra Bondhu Tours & Travels" />
-                <meta property="og:description" content="Discover exclusive tour packages to top destinations like Singapore, Bali, Egypt, and more with Jatra Bondhu." />
+
+                {/* Open Graph Tags for Social Media */}
+                <meta property="og:title" content="Tour Packages" />
+                <meta property="og:description" content="Discover exclusive tour packages to top destinations like Singapore, Bali, Egypt, and more with Jatra Bondhu Tours & Travels. Experience hassle-free booking and exceptional service." />
                 <meta property="og:url" content="https://www.jatrabondhu.com/tour-packages" />
                 <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Jatra Bondhu Tours & Travels" />
             </Helmet>
+
             <h2
                 className="text-4xl font-bold text-center mb-8 text-blue-900"
                 data-aos="fade-up"

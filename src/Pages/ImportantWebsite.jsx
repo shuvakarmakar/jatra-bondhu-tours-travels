@@ -39,17 +39,20 @@ const ImportantWebsite = () => {
         <section className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
             {/* Helmet for SEO and Meta Tags */}
             <Helmet>
-                <title>Important Websites for Travelers | Jatra Bondhu Tours & Travels</title>
-                <meta
-                    name="description"
-                    content="Access essential websites for travelers, including passport services, consular services, travel regulations, and more."
-                />
-                <link rel="canonical" href="https://www.jatrabondhu.com/important-websites" />
-                <meta property="og:title" content="Important Websites for Travelers | Jatra Bondhu Tours & Travels" />
-                <meta property="og:description" content="Explore vital websites for travelers to ensure smooth travel experiences and access essential services." />
-                <meta property="og:url" content="https://www.jatrabondhu.com/important-websites" />
+                <title>Visa Requirements</title>
+                <meta name="description" content="Explore visa requirements for Thailand, Malaysia, Cambodia, Vietnam, Maldives, India, Europe, Asia, America, Canada, Australia, New Zealand, Singapore, and more with Jatra Bondhu Tours & Travels. Get detailed information for job holders and business owners." />
+                <meta name="keywords" content="Visa Requirements, Thailand Visa, Malaysia Visa, Singapore Visa, Cambodia Visa, Vietnam Visa, Maldives Visa, India Visa, Europe Visa, Asia Visa, America Visa, Canada Visa, Australia Visa, New Zealand Visa, Travel Documents, Jatra Bondhu Tours & Travels, Visa Information, Visa Guide, Visa Assistance, Work Visa, Business Visa, Tourist Visa, Visa Application Process, Visa Fees, Visa for Bangladesh Citizens, Visa Support, Travel Visa, Thailand Visa Application, Malaysia Visa Application, Singapore Visa Application, Cambodia Visa Application, Vietnam Visa Application, Maldives Visa Application, India Visa Application, Europe Visa Application, America Visa Application, Canada Visa Application, Australia Visa Application, New Zealand Visa Application, Travel Agency Visa Assistance, Visa Consultation, Visa Approval Tips, Visa Processing Time, Visa for Job Holders, Business Owner Visa, Immigration Assistance" />
+                <link rel="canonical" href="https://jatrabondhu.com/visa-info" />
+
+                {/* Open Graph Tags for Social Media */}
+                <meta property="og:title" content="Visa Requirements" />
+                <meta property="og:description" content="Get the latest information on visa requirements for countries like Thailand, Malaysia, Singapore, and more with Jatra Bondhu Tours & Travels." />
+                <meta property="og:url" content="https://jatrabondhu.com/visa-info" />
                 <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Jatra Bondhu Tours & Travels" />
             </Helmet>
+
+
 
             <div className="container mx-auto">
                 <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">

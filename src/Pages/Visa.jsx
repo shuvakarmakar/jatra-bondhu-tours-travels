@@ -57,11 +57,13 @@ const Visa = () => {
         <section className="lg:min-h-screen">
             {/* Helmet for SEO */}
             <Helmet>
-                <title>Visa Requirements | Jatra Bondhu Tours & Travels</title>
-                <meta name="description" content="Explore visa requirements for Thailand, Malaysia, and Singapore with Jatra Bondhu Tours & Travels. Get detailed information for job holders and business owners." />
-                <meta name="keywords" content="Visa Requirements, Thailand Visa, Malaysia Visa, Singapore Visa, Travel Documents, Jatra Bondhu Tours & Travels" />
+                <title>Visa Requirements</title>
+                <meta name="description" content="Explore visa requirements for Thailand, Malaysia, Cambodia, Vietnam, Maldives, India, Europe, Asia, America, Canada, Australia, New Zealand, Singapore, and more with Jatra Bondhu Tours & Travels. Get detailed information for job holders and business owners." />
+                <meta name="keywords" content="Visa Requirements, Thailand Visa, Malaysia Visa, Singapore Visa, Cambodia Visa, Vietnam Visa, Maldives Visa, India Visa, Europe Visa, Asia Visa, America Visa, Canada Visa, Australia Visa, New Zealand Visa, Travel Documents, Jatra Bondhu Tours & Travels, Visa Information, Visa Guide, Visa Assistance, Work Visa, Business Visa, Tourist Visa, Visa Application Process, Visa Fees, Visa for Bangladesh Citizens, Visa Support, Travel Visa, Thailand Visa Application, Malaysia Visa Application, Singapore Visa Application, Cambodia Visa Application, Vietnam Visa Application, Maldives Visa Application, India Visa Application, Europe Visa Application, America Visa Application, Canada Visa Application, Australia Visa Application, New Zealand Visa Application, Travel Agency Visa Assistance, Visa Consultation, Visa Approval Tips, Visa Processing Time, Visa for Job Holders, Business Owner Visa, Immigration Assistance" />
                 <link rel="canonical" href="https://jatrabondhu.com/visa-info" />
             </Helmet>
+
+
 
             <h2
                 className="text-3xl sm:text-4xl font-bold text-center m-7 text-blue-900"
