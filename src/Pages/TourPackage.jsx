@@ -71,12 +71,12 @@ const TourPackage = () => {
                 <meta property="og:site_name" content="Jatra Bondhu Tours & Travels" />
             </Helmet>
 
-            <h2
+            <h1
                 className="text-4xl font-bold text-center mb-8 text-blue-900"
                 data-aos="fade-up"
             >
                 Explore Our Tour Packages
-            </h2>
+            </h1>
             <div
                 className="container mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
                 data-aos="fade-up"

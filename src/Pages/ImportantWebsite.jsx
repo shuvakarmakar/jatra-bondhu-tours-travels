@@ -55,9 +55,9 @@ const ImportantWebsite = () => {
 
 
             <div className="container mx-auto">
-                <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
+                <h1 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
                     Important Websites for Travelers
-                </h2>
+                </h1>
                 <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {websites.map((website, index) => (
                         <div

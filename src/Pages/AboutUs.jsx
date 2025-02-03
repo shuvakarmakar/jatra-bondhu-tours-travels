@@ -34,9 +34,9 @@ const AboutUs = () => {
 
             <div className="bg-gray-100 min-h-screen flex items-center justify-center">
                 <div className="bg-white rounded-lg shadow-lg p-8 sm:p-12 max-w-4xl text-center">
-                    <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
+                    <h1 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
                         About Us
-                    </h2>
+                    </h1>
                     <p className="text-black text-lg leading-relaxed mb-6">
                         Welcome to <span className="font-semibold">Jatra Bondhu Tours & Travels</span>, your trusted partner in creating unforgettable travel experiences. Based in the heart of Narayanganj, we specialize in delivering the best travel services tailored to meet your needs. From booking flights to planning your next vacation, we are dedicated to making your journey seamless, enjoyable, and memorable.
                     </p>

@@ -20,9 +20,9 @@ const TermsandConditions = () => {
 
             <div className="bg-gray-100 min-h-screen flex items-center justify-center">
                 <div className="container mx-auto max-w-5xl bg-white shadow-lg rounded-lg p-8">
-                    <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
+                    <h1 className="text-4xl font-extrabold text-center mb-10 text-blue-900 drop-shadow-md">
                         Terms and Conditions
-                    </h2>
+                    </h1>
                     <p className="text-gray-700 mb-4 text-justify">
                         Welcome to Jatra Bondhu! By accessing or using our website and services, you agree to comply with and be bound by the following terms and conditions. Please read them carefully.
                     </p>
