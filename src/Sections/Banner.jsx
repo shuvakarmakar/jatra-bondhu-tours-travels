@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import travel1 from '../assets/Banner/Banner 1.jpg'; 
-import travel2 from '../assets/Banner/Banner 2.jpg'; 
-import travel3 from '../assets/Banner/Banner 3.jpg'; 
+import travel1 from '../assets/Banner/Banner 1.jpg';
+import travel2 from '../assets/Banner/Banner 2.jpg';
+import travel3 from '../assets/Banner/Banner 3.jpg';
+import travel4 from '../assets/Banner/Banner 4.jpg';
 
 
 const Banner = () => {
-    const images = [travel1, travel2, travel3];
+    const images = [travel1, travel2, travel3, travel4];
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
@@ -14,7 +15,7 @@ const Banner = () => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
         }, 3000); // Change slide every 3 seconds
 
-        return () => clearInterval(interval); 
+        return () => clearInterval(interval);
     }, [images.length]);
 
     return (
@@ -49,6 +50,11 @@ const Banner = () => {
                         1500,
                         'Your Trusted Travel Partner',
                         1500,
+                        'Best Student Fare Air Tickets Available',
+                        1500,
+                        'Exclusive Discounts for Students',
+                        1500
+
                     ]}
                     speed={50}
                     wrapper="span"
