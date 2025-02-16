@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import { FaFacebook, FaFileContract, FaInfoCircle, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
@@ -6,6 +6,14 @@ import { SiWebex } from "react-icons/si";
 
 
 const ContactForm = () => {
+
+    useEffect(() => {
+        // Load Trustpilot script dynamically
+        const script = document.createElement("script");
+        script.src = "https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js";
+        script.async = true;
+        document.body.appendChild(script);
+    }, []);
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -57,7 +65,7 @@ const ContactForm = () => {
             {/* Contact Form and Social Media Links */}
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between bg-white rounded-lg shadow-lg">
                 {/* Left Side - Form */}
-                <div className="w-full md:w-1/2 p-6 bg-gradient-to-r from-teal-600 to-blue-500 text-white rounded-lg shadow-lg">
+                <div className="w-full md:w-1/2 p-8 bg-gradient-to-r from-teal-600 to-blue-500 text-white rounded-lg shadow-lg">
                     <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
                     <form ref={form} onSubmit={sendEmail} className="space-y-4">
                         <div>
@@ -100,7 +108,7 @@ const ContactForm = () => {
 
                 {/* Right Side - Social Media and Quick Links */}
                 <div className="w-full md:w-1/2 flex flex-col items-center md:items-start space-y-8 text-center md:text-left md:pl-8 p-6">
-                    <div>
+                    <div className='mt-6'>
                         <h2 className="text-2xl font-bold text-blue-600 mb-4">Connect With Us</h2>
                         <p className="text-gray-700 mb-4">
                             Reach out to us on social media or chat with us directly!
@@ -169,8 +177,34 @@ const ContactForm = () => {
                             </li>
                         </ul>
                     </div>
-
+                    {/* Trustpilot Review Collector Widget */}
+                    <div className="w-full flex justify-start mt-0">
+                        <div className="w-full p-0">
+                            <h2 className="text-2xl font-bold text-blue-600 mb-4">
+                                Customer Reviews
+                            </h2>
+                            <div
+                                className="trustpilot-widget"
+                                data-locale="en-US"
+                                data-template-id="56278e9abfbbba0bdcd568bc"
+                                data-businessunit-id="67ac89225186fc26ff27610c"
+                                data-style-height="150px"
+                                data-style-width="100%"
+                                data-theme="light"
+                            >
+                                <a
+                                    href="https://www.trustpilot.com/review/jatrabondhu.com"
+                                    target="_blank"
+                                    rel="noopener"
+                                    className="text-blue-600 hover:underline"
+                                >
+                                    See our reviews on Trustpilot
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
