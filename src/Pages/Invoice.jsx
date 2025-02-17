@@ -203,8 +203,8 @@ const Invoice = () => {
         const paidImage = paid;
         const unpaidImage = unpaid;
 
-        const imageX = 55; 
-        const imageSize = 30; 
+        const imageX = 55;
+        const imageSize = 30;
 
         if (invoiceData.paymentStatus === "Paid") {
             doc.addImage(paidImage, "PNG", imageX, paymentStatusY - 5, imageSize, imageSize); // Paid image
@@ -220,11 +220,23 @@ const Invoice = () => {
         const thankYouY = finalY + 120; // Dynamically positioned below the signature and payment details
         doc.setFont("helvetica", "bold");
         doc.setFontSize(12);
-        doc.setTextColor(0, 0, 0); 
+        doc.setTextColor(0, 0, 0);
         doc.text(
             "Thank You For Being With Jatra Bondhu",
             doc.internal.pageSize.width / 2,
             thankYouY,
+            { align: "center" }
+        );
+
+        // Visit website message
+        const visitY = thankYouY + 20; // Positioned below the "Thank You" message
+        doc.setFont("helvetica", "bold"); // Set bold font
+        doc.setFontSize(12);
+        doc.setTextColor(0, 0, 255); // Blue color (RGB value)
+        doc.text(
+            "Visit: www.jatrabondhu.com",
+            doc.internal.pageSize.width / 2,
+            visitY,
             { align: "center" }
         );
 
