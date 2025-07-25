@@ -53,7 +53,7 @@ const ContactForm = () => {
     };
 
     return (
-        <section id="contact-form" className="py-16 px-4 bg-gray-50">
+        <section id="contact-form" className="py-12 px-4 bg-gray-50">
             {/* Centered Headline */}
             <div className="text-center mb-10">
                 <h1 className="text-4xl font-bold text-gray-800">Contact Us</h1>
@@ -61,7 +61,6 @@ const ContactForm = () => {
                     We’re here to help! Reach out to us with any questions or feedback.
                 </p>
             </div>
-
             {/* Contact Form and Social Media Links */}
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between bg-white rounded-lg shadow-lg">
                 {/* Left Side - Form */}
@@ -113,6 +112,7 @@ const ContactForm = () => {
                         <p className="text-gray-700 mb-4">
                             Reach out to us on social media or chat with us directly!
                         </p>
+
                         <div className="flex flex-col space-y-4 w-full">
                             <a
                                 href="https://www.facebook.com/JatraBondhu"
@@ -204,7 +204,6 @@ const ContactForm = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 

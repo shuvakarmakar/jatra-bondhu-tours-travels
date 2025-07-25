@@ -2,11 +2,11 @@ import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import Contact from "./Contact";
 import Service from "./Service";
-import TeamIntroduction from "./TeamIntroduction";
 import AirlinePartners from "./AirlinePartners";
 import Loader from "./Loader";
 import WhatsAppChat from "./WhatsappChat";
 import LiveChat from "./LiveChat";
+import TeamIntroduction from "./TeamIntroduction";
 
 const Home = () => {
     return (

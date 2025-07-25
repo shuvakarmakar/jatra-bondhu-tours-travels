@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
             {
                 path: "/important-websites",
                 element: <ImportantWebsite></ImportantWebsite>
-            }
+            },
         ]
     }
 
